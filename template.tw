@@ -1,0 +1,1271 @@
+:: StoryTitle
+Phillis Wheatley Visits London! Read all about it!
+
+
+:: StoryData
+{
+	"ifid": "BAAC7F8F-3540-4F29-ABBE-2AAFD00ADBCC",
+	"format": "SugarCube",
+	"format-version": "2.36.1",
+	"start": "landing",
+	"zoom": 0.6
+}
+
+
+:: Story Stylesheet [stylesheet]
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap");
+
+/* GENERICS */
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /* Mostly equivalates to 10px but allows users accessibility zoom settings to work*/
+  /* font-size: 10px; */
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  min-height: 100vh;
+}
+
+body {
+  font-size: 10px;
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* Try to keep your margins going in one direction to avoid margin collapase or grounding. I switch all the top margins off to avoid this issue. */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+blockquote,
+address,
+article,
+aside,
+details,
+dialogue,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+header,
+hr,
+main,
+nav,
+pre,
+section,
+table,
+p {
+  margin-top: 0;
+  margin-block-start: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  /* You MUST make sure that links stand out from nomal text though...*/
+}
+
+
+img {
+  /* This means that it can be less than 100% of the width of its parent IF the image is INTRINSICALLY smaller */
+  max-width: 100%;
+
+  height: auto;
+  /* 'auto' is the initial value for height BUT for images (and other elements which have an intrinic height) that is not the case. To make an image responsive you set one dimension (usually width) to [max-]width: 100%; and the other to 'auto' to ensure it keeps aspect ratio. 'auto' basically tells the browser to decide. */
+  vertical-align: middle;
+  /* minor vertical centering. Works for images IF there is a baseline (i.e. they are displayed inline or inline-block) */
+}
+
+/* Because we us <ul>s for lists that we don't always want bulletted. */
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* To make actual bulletted lists */
+ul.typographic {
+  list-style: initial;
+  padding-inline-start: 20px;
+}
+
+/* stops icons being the target of JS click events */
+a.btn *,
+button * {
+  pointer-events: null;
+}
+
+/* For 'accessibility text'. If your button only has an image inside it that isn't good for accessibility. Put a span inside there and give it this class and put some descriptive text for what the button does into the span. */
+
+.sr-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: polygon(0px 0px, 0px 0px, 0px 0px);
+  -webkit-clip-path: polygon(0px 0px, 0px 0px, 0px 0px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip: auto;
+  clip-path: auto;
+  -webkit-clip-path: auto;
+  white-space: normal;
+}
+
+/* GET RID OF TWINE STYLES */
+#story{
+  margin:0
+}
+
+#passages {
+	max-width: 100%;
+
+}
+
+#story a.link-external:after {
+	content: "";
+}
+
+button{
+    background-color: transparent;
+    border: #fff 1px solid;
+    border-radius: 3px;
+}
+
+button:hover{
+	background-color:#ea9e25;
+	border: #fff 1px solid;
+	color: #fff;
+}
+
+a {
+  color:#ea9e25;;
+}
+
+a:active {
+  background-color: #ea9e25;;
+}
+
+a:hover {
+  color: #fff;
+}
+
+#story a.link-external:after {
+	content: "";
+}
+
+#story {
+	margin: 0
+}
+
+/* GENERAL STYLES */
+body{
+  font-size: 1.8rem;
+  font-weight: 600;
+  font-family: "Space Grotesk";
+  color:#fff;
+  /* color:#000; */
+  overflow:scroll;
+  background:#188081;
+  /* padding: 1.5rem */
+  display:flex;
+  flex-direction: column
+}
+
+
+header{
+  display:flex;
+  justify-content: flex-end;
+  align-items: center;
+    padding: 2rem
+}
+
+main{
+   padding: 2rem;
+   margin-block-end: 10rem
+}
+
+input[type=text]{
+  border: 1px solid #fff
+}
+/* FOOTER  */
+
+footer{
+   display:flex;
+  justify-content: space-between;
+align-items: end;
+  position:fixed;
+  bottom: 0;
+  padding: 2rem;
+  width: 100%;
+background: #188081;
+}
+
+nav{
+  display:flex;
+    justify-content: space-between;
+}
+
+.nav-wrapper{
+display:flex;
+  flex-direction:column;
+align-items: flex-start
+}
+
+.nav-wrapper:last-child{
+align-items: flex-end
+}
+
+.nav-item{
+  margin-block-end: 0.5rem;
+  width:100%;
+  display:flex
+}
+
+.nav-item.replay, .nav-item.end{
+justify-content: center
+}
+.nav-item.replay, .nav-item.forward{
+justify-content: end
+}
+
+.nav-item.replay, .nav-item.back{
+justify-content: start
+}
+
+.nav-item.forward > button, 
+.nav-item.back > button{
+  font-size:2rem
+}
+footer > button:first-child,  {
+  font-size:2rem
+}
+
+.nav-item > button{
+ font-size: 1.3rem
+}
+
+.menu-wrapper{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.menu-wrapper > button{
+margin-inline-end: 10px;
+margin-block-end: 10px
+}
+
+.door-container{
+  display:flex;
+  flex-direction: row;
+justify-content: space-around;
+  align-items:center;
+  text-align: right;
+}
+
+.door-item{
+  display:flex;
+  flex-direction:column
+}
+
+.door-item > button > img {
+  max-width: 7rem
+}
+
+.door-item > span {
+  text-align: center
+}
+
+strong{
+color:#d9c1bd;
+}
+
+textarea{
+  min-width: 60vw
+}
+
+.wordcontainer{
+  display:flex;
+  flex-direction: row;
+}
+
+.letter-item > input[type=text]{
+    min-width: 2em;
+  	max-width: 2em;
+  	margin-inline-end:10px;
+}
+
+.letter-item > .correct-letter{
+  min-width: 2em;
+  	max-width: 2em;
+  	margin-inline-end:10px;
+}
+
+.words{
+  display:flex;
+  flex-direction: row;
+}
+
+.word{
+  padding: 5px;
+}
+
+.detector{
+ width: 50%;
+}
+
+.spinning{
+
+  animation-name: spin;
+  animation-duration: 2000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; 
+  /* transform: rotate(3deg); */
+   /* transform: rotate(0.3rad);/ */
+   /* transform: rotate(3grad); */ 
+   /* transform: rotate(.03turn);  */
+}
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+
+/* MAP */
+	.map{
+width: 100%;
+    height: 60vh;
+    border: 0;
+    margin: auto;
+    }
+
+
+.directions-card {
+    display: none!important
+}
+
+@media screen and (min-width: 450px) {
+.map{
+	max-width:60vw;
+	height:50vh;
+	border:0
+}
+}
+
+/* SPECIFICS */
+h2.letter{
+
+  font-size: 5rem;
+
+}
+
+
+:: Story JavaScript [script]
+$('#ui-bar').remove();
+$(document.head).find('#style-ui-bar').remove();
+// TYPEWRITER FN
+!function() {
+    postrender.typewriter = function (b) {
+        if (this.tags) {
+            var r = new RegExp("t8n.typewriter.([0-9]+)(?:[^0-9]|$)","g");
+            var t = r.exec(this.tags.toString());
+            if (t) {
+                typeout(b, t[1]+0);
+            }
+        }
+        return b;
+    };
+    var typeout = function(c,t) {
+        var Furl = function(current) {
+            this.n = current;
+            this.out = false;
+            this.data = current.nodeValue;
+            current.nodeValue = "";
+            this.kids = [];
+            var cn = current.childNodes;
+            if (current.style && current.style.display=="none") {
+                return;
+            }
+            while (cn.length>0) {
+                var f = new Furl(cn[0]);
+                current.removeChild(cn[0]);
+                f.out = true;this.kids.push(f);
+            }
+        };
+        var nodes = new Furl(c);
+        var unfurl = function(furled,d) {
+            var n = furled.n;
+            if (furled.out) {
+                d.appendChild(n);
+                furled.out = false;
+            }
+            if (furled.data) {
+                n.nodeValue += furled.data[0];
+                furled.data = furled.data.slice(1);
+                return true;
+            }
+            for (var j=0; j<furled.kids.length; j++) {
+                var ret = unfurl(furled.kids[j],n);
+                if (ret) {
+                    return true;
+                }
+            }
+            return false;
+        };
+        var title = passage();
+        var intr = setInterval (
+            function() {
+                if (passage() == title && unfurl(nodes,null)) {
+                    return;
+                }
+                clearInterval(intr);
+            }
+        ,t);
+    };
+}();
+
+// MAKE MAP FUNCTION
+
+setup.generateDirectionsMap = function (latorg, longorg, latdest, longdest){
+const iFrame = document.createElement("iframe")
+iFrame.classList.add("map")
+iFrame.setAttribute("loading", "lazy")
+iFrame.setAttribute("referrerpolicy", "no-referrer-when-downgrade")
+// iFrame.setAttribute("allowfullscreen")
+iFrame.setAttribute("src", `https://www.google.com/maps/embed/v1/directions?key=AIzaSyBDRwRTMpSybNcmgkYVX1yZ0YmBbNhs9qU&center=${latorg},${longorg}&zoom=17&origin=${latorg},${longorg}&destination=${latdest},${longdest}&mode=walking`)
+const mount = document.getElementById("mapMount")
+return iFrame
+}
+
+//Get random 5 letter word
+
+setup.generate5LetterCode = () => {
+const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+let word = ""
+for (let i =0 ; i < 5 ; i++){
+word += alphabet[Math.round((alphabet.length-1)*Math.random())];
+}
+  return word;
+}
+
+//Check if an array contains multiple instances of an element
+
+setup.checkForRepeats = (array,element) => {
+ const arrayCopy = [...array];
+ const duplicates = arrayCopy.filter((item, index) => index !== arrayCopy.indexOf(item));
+ return duplicates.contains(element)
+}
+
+
+:: StoryInit {"position":"100,100","size":"100,100"}
+<<cacheaudio "badjoke" "https://youhavefoundconey.net/CG/what/assets/audio/badjoke.mp3">>
+<<waitforaudio>>
+
+
+:: header {"position":"100,225","size":"100,100"}
+<header>Phillis Wheatley Visits London! Read all about it!</header>
+
+
+:: footer {"position":"100,375","size":"100,100"}
+<footer>
+<div class="nav-item back"><<button "<">><<goto $prevpass>><</button>></div>
+<div class="nav-item"><<button "Replay">><<goto $passage>><</button>> </div>
+<div class="nav-item"><<button "Take me to the end">><<goto "lost">><</button>></div>
+<div class="nav-item forward"><<button ">">><<set $prevpass to $passage>><<goto $nextpassage>><</button>></div>
+</footer>
+
+
+:: lost {"position":"700,50","size":"100,100"}
+<<set $passage to "lost">><<include "header">>
+<main>
+Sorry to hear that you're lost! 
+You have two options:
+
+<<button "Begin the adventure again">><<goto "landing">><</button>>
+
+<<button "Take me straight to the end location!">><<goto "end">><</button>>
+</main>
+<<include "footerlost">>
+
+
+:: landing {"position":"500,100","size":"100,100"}
+<<set $passage to "landing">>
+<<include "header">>
+<main>
+
+<<button "Start">><<set $prevpass to $passage>><<goto "PW-05">><</button>>
+     
+
+</main>
+<<include "footer">>
+
+
+:: end {"position":"100,975","size":"100,100"}
+<<set $passage to "end">><<audio ":all" stop>>
+<<include "header">>
+<main>
+
+End
+/*End map needed*/
+
+
+</main>
+<<include "footerend">>
+
+
+:: footersimple {"position":"99,493","size":"100,100"}
+<footer><div class="nav-wrapper "><div class="nav-item"><<button "<">><<goto $prevpass>><</button>></div><div class="nav-item"><<button "Replay">><<goto $passage>><</button>> </div></div><div class="nav-wrapper"><div class="nav-item"><<button "Take me to the end">><<goto "lost">><</button>></div></div></footer>
+
+
+:: PW-05 {"position":"500,225","size":"100,100"}
+<<set $passage to "PW-05">>
+<<include "header">>
+<main>
+
+PHILLIS: Hello. It’s good to meet you. My name is Phillis Wheatley… I don’t normally talk to strangers, but it’s my first time in London and I could do with some company. 
+
+I’ve heard that today, something strange is going on with the time-zones. I’m in 1773. But there are rumours that people from 2022 - and many different times - are roaming about the streets today. Is that true? Are you … are you … one of the one’s from the future? Your clothes suggest that that would be correct, because I’ve never seen anything like it…
+
+<div class = "menu-wrapper">
+<<button "Yep, I’m living in 2022 and this isn’t weird at all. ">><<set $prevpass to $passage>><<goto "PW-06">><</button>>
+<<button "Ummmmm. Surely this can’t be real. ">><<set $prevpass to $passage>><<goto "PW-06">><</button>>  
+</div>
+
+</main>
+<<include "footersimple">>
+
+
+:: PW-06 {"position":"500,350","size":"100,100"}
+<<set $passage to "PW-06">><<set $nextpassage to "PW-07">>
+<<include "header">>
+<main>
+
+P: Well. Hmm. Ok. I’m just going to believe it. 
+
+So, imagine for a moment that you are in 1773, like me. People like me are not so common a sight on these streets in London. I’m a young woman of 20, I’m a black woman, and I’m officially enslaved. My… well, I don’t know what to call them.  The… the people who bought me at the age of 7, the people who named me after the ship that brought me from West Africa to America, who still own every right to my humanity and movements… Those people are back in Boston. And for the first time, I’m away from their grasp. They’ve sent me over to London in the pursuit of getting my book published. I’m a poet, you see.  I’ve been writing poetry since I was a young girl and, well, not to blow my own horn but I’m very good at it. 
+
+But there is another reason I’m in London, however. The book isn’t everything. 
+
+Would you like to know the real reason I’m here?
+
+<<button "There’s another reason??? Yes please, tell us!">><<set $prevpass to $passage>><<goto "PW-07">><</button>>
+ 
+
+</main>
+<<include "footer">>
+
+
+:: PW-07 {"position":"500,475","size":"100,100"}
+<<set $passage to "PW-07">><<set $nextpassage to "PW-08">>
+<<include "header">>
+<main>
+
+P: Okay.. hmm. It’s just, I can’t just say these things directly out-loud to anyone - it isn’t safe for me to do so. I need to know if I can trust you. I’ll give you a little puzzle, and if you can solve it, I’ll let you know the reason.
+
+I am an island in the Caribbean,  
+And my name used to be Xaymaca.
+Our name was changed for the European maps
+Their preference - a J for an X - has stuck over the years…
+
+
+<div class = "menu-wrapper">
+  <<button "BARBADOS">><<set $prevpass to $passage>><<goto "PW-08B">><</button>>
+  <<button "DOMINICA">><<set $prevpass to $passage>><<goto "PW-08B">><</button>>
+  <<button "JAMAICA">><<set $prevpass to $passage>><<goto "PW-08A">><</button>>
+</div>
+
+</main>
+<<include "footersimple">>
+
+
+:: PW-08A {"position":"425,600","size":"100,100"}
+<<set $passage to "PW-08A">><<set $nextpassage to "PW-09">>
+<<include "header">>
+<main>
+
+P: Correct: Yes that's it! You're good at this, Here is your next riddle
+
+
+<<timed 3s>><<set $prevpass to $passage>><<goto "PW-09">><</timed>>
+
+
+</main>
+<<include "footer">>
+
+
+:: PW-08B {"position":"575,600","size":"100,100"}
+<<set $passage to "PW-08B">><<set $nextpassage to "PW-09">>
+<<include "header">>
+<main>
+
+P: Oh, not quite - it was JAMAICA. Let's see if you can get this next one…
+
+
+<<timed 3s>><<set $prevpass to $passage>><<goto "PW-09">><</timed>>
+
+
+</main>
+<<include "footer">>
+
+
+:: PW-09 {"position":"500,725","size":"100,100"}
+<<set $passage to "PW-09">>
+<<include "header">>
+<main>
+
+Although I’m not magic
+I am a type of bean
+I’m something you can drink
+That has lots of caffeine
+
+<div class = "menu-wrapper">
+  <<button "COFFEE">><<set $prevpass to $passage>><<goto "PW-10A">><</button>>
+  <<button "CHICKPEAS">><<set $prevpass to $passage>><<goto "PW-10B">><</button>>
+  <<button "LIMA BEANS">><<set $prevpass to $passage>><<goto "PW-10B">><</button>>
+</div>
+
+</main>
+<<include "footersimple">>
+
+
+:: PW-10A {"position":"425,850","size":"100,100"}
+<<set $passage to "PW-10A">><<set $nextpassage to "PW-11">>
+<<include "header">>
+<main>
+
+Yes, that’s right! Here is your next riddle
+
+<<timed 3s>><<set $prevpass to $passage>><<goto "PW-11">><</timed>>
+
+
+</main>
+<<include "footer">>
+
+
+:: PW-10B {"position":"575,850","size":"100,100"}
+<<set $passage to "PW-10B">><<set $nextpassage to "PW-11">>
+<<include "header">>
+<main>
+
+Ah, that’s not quite right. It was COFFEE. Let's see if you can get the final one…
+
+<<timed 3s>><<set $prevpass to $passage>><<goto "PW-11">><</timed>>
+
+
+</main>
+<<include "footer">>
+
+
+:: PW-11 {"position":"500,975","size":"100,100"}
+<<set $passage to "PW-11">>
+<<include "header">>
+<main>
+
+People live, eat and sleep inside of me,
+They close the door behind them.
+But it would take much more to become a home,
+It would take laughter, good food, and memories over the years. 
+
+
+<div class = "menu-wrapper">
+  <<button "STONE">><<set $prevpass to $passage>><<goto "PW-12B">><</button>>
+  <<button "HOUSE">><<set $prevpass to $passage>><<goto "PW-12A">><</button>>
+  <<button "POSTBOX">><<set $prevpass to $passage>><<goto "PW-12B">><</button>>
+</div>
+
+</main>
+<<include "footersimple">>
+
+
+:: PW-12A {"position":"425,1100","size":"100,100"}
+<<set $passage to "PW-12A">><<set $nextpassage to "PW-13">>
+<<include "header">>
+<main>
+
+Yes that's it! Let’s find out what’s next.
+
+<<timed 3s>><<set $prevpass to $passage>><<goto "PW-13">><</timed>>
+
+
+</main>
+<<include "footer">>
+
+
+:: PW-12B {"position":"575,1100","size":"100,100"}
+<<set $passage to "PW-12B">><<set $nextpassage to "PW-13">>
+<<include "header">>
+<main>
+
+Ah, it is actually HOUSE. Let’s find out what’s next.
+
+<<timed 3s>><<set $prevpass to $passage>><<goto "PW-13">><</timed>>
+
+
+</main>
+<<include "footer">>
+
+
+:: PW-13 {"position":"500,1225","size":"100,100"}
+<<set $passage to "PW-13">>
+<<include "header">>
+<main>
+
+JAMAICA COFFEE HOUSE
+
+P: So you pieced together Jamaica Coffee House. That’s where I’m heading today. And as you took the time to crack that code, I think I can trust you now. 
+
+You wanted to know the reason I’m here? I have a wider project in this city, and it is to get a deeper understanding of this frankly tyrannical institution of slavery, and where better to do that than the place where all the English men with power over the empire meet to socialise? I also think that… and shh, I can’t say this too loudly. I think that the more that I understand this institution… and the more people I meet and win over to my side here, the more likely I can secure my freedom back home. 
+
+I can’t say much more now. But, I think I can trust you. So do you want to come with me to the Jamaica Coffee House? I’ll teach you some things along the way, to pass the time - and anybody who sees us will think we are simply doing some lovely creative writing exercises across time zones together. Great. Let’s go.
+
+<<timed 3s>><<set $prevpass to $passage>><<goto "PW-14">><</timed>>
+
+
+
+</main>
+<<include "footersimple">>
+
+
+:: PW-14 {"position":"500,1350","size":"100,100"}
+<<set $passage to "PW-14">><<set $nextpassage to "PW-15">>
+<<include "header">>
+<main>
+
+/*No audio*/
+
+Head out through the exit in the middle of the long side of the park. You’ll see an odalisque. Go past that, and carefully cross the busy road (London Wall St)
+After you cross turn Right and then immediately Left on Copthall Ave. 
+
+/*MAP NEEDED*/
+
+<<button "NEXT">><<set $prevpass to $passage>><<goto "PW-15">><</button>>
+
+
+</main>
+<<include "footersimple">>
+
+
+:: PW-15 {"position":"500,1475","size":"100,100"}
+<<set $passage to "PW-15">><<set $nextpassage to "PW-16">>
+<<include "header">>
+<main>
+
+P: As poets, people usually want us to describe our surroundings in beautiful ways. 
+
+But being in the centre of London makes me feel a bit… tense. I look around and I see a lot of beauty. Some of these buildings and churches are awe-inspiring, it’s true. I went to the Tower of London yesterday and I was so moved by the spires, the ancient beauty, the jewels. 
+
+ But if I’m being honest, how can I view this city’s buildings and beauty in such a simplistic way? What money funded this elegance? Whose labour?
+
+/*No audio for this line*/
+Continue down Copthall Ave. When it bears right continue straight onto Angel Ct
+
+/*MAP NEEDED*/
+
+As you walk to the next stop, I would like you to find the ugliest thing you can. It could be some waste, or a building, or a sign - whatever you want. Just something that makes you feel a little .. disgusted, or uncomfortable. Once you’ve found that thing, press next: 
+
+<<button "NEXT">><<set $prevpass to $passage>><<goto "PW-16">><</button>>
+
+
+</main>
+<<include "footersimple">>
+
+
+:: PW-16 {"position":"500,1600","size":"100,100"}
+<<set $passage to "PW-16">>
+<<include "header">>
+<main>
+
+P: Now you have your ugly item. 
+
+As mentioned, it isn’t safe for me to be so explicit in my views. If I find some aspects of London repulsive, I need to hide that view within my poetry. 
+
+So let's do some writing.
+
+Type in the name of your ugly object:
+
+<<textbox "$uglyitem" "">>
+<div class = "errormessage">
+</div>
+
+<<button "Enter">>
+<<if $uglyitem isnot "">>
+<<set $uglyitem to $uglyitem.toUpperCase()>>
+<<set $prevpass to $passage>><<goto "PW-17">>
+<<else>>
+<<replace ".errormessage">>Please enter your ugly item<</replace>>
+<</if>>
+<</button>>
+
+
+</main>
+<<include "footersimple">>
+
+
+:: footerlost {"position":"100,625","size":"100,100"}
+<footer><div class="nav-wrapper "><div class="nav-item"><<button "Back">><<goto $prevpass>><</button>></div></div></footer>
+
+
+:: footerend {"position":"100,750","size":"100,100"}
+<footer>
+<div class="nav-item"><<button "Start again">><<goto "landing">><</button>></div>
+</footer>
+
+
+:: PW-17 {"position":"500,1725","size":"100,100"}
+<<set $passage to "PW-17">><<set $nextpassage to "PW-18">>
+<<include "header">>
+<main>
+
+P: Pick a word that makes something sound awful: 
+
+<div class = "menu-wrapper">
+  <<button "PAINFULLY">>
+    <<set $awfulword to "PAINFULLY">>
+    <<set $prevpass to $passage>><<goto "PW-18">>
+  <</button>>
+  <<button "DISGUSTINGLY">>
+    <<set $awfulword to "DISGUSTINGLY">>
+    <<set $prevpass to $passage>><<goto "PW-18">>
+    <</button>>
+  <<button "GROTESQUELY">>
+    <<set $awfulword to "GROTESQUELY">>
+    <<set $prevpass to $passage>><<goto "PW-18">>
+  <</button>>
+</div>
+
+</main>
+<<include "footersimple">>
+
+
+:: PW-18 {"position":"500,1850","size":"100,100"}
+<<set $passage to "PW-18">><<set $nextpassage to "PW-19">>
+<<include "header">>
+<main>
+
+P: Now, pick a word that makes something sound beautiful / epic: 
+
+<div class = "menu-wrapper">
+  <<button "WONDERFUL">>
+    <<set $wonderfulword to "WONDERFUL">>
+    <<set $prevpass to $passage>><<goto "PW-19">>
+  <</button>>
+  <<button "FORCEFUL">>
+    <<set $wonderfulword to "FORCEFUL">>
+    <<set $prevpass to $passage>><<goto "PW-19">>
+  <</button>>
+  <<button "MAJESTIC">>
+    <<set $wonderfulword to "MAJESTIC">>
+    <<set $prevpass to $passage>><<goto "PW-19">>
+  <</button>>
+</div>
+
+</main>
+<<include "footersimple">>
+
+
+:: PW-19 {"position":"500,1975","size":"100,100"}
+<<set $passage to "PW-19">><<set $nextpassage to "PW-20">>
+<<include "header">>
+<main>
+
+P: Let’s put it together, shall we? 
+
+A $awfulword $wonderfulword $uglyitem
+
+<<button "NEXT">>
+    <<set $prevpass to $passage>><<goto "PW-20">>
+<</button>>
+
+</main>
+<<include "footersimple">>
+
+
+:: PW-20 {"position":"500,2100","size":"100,100"}
+<<set $passage to "PW-20">><<set $nextpassage to "PW-21">>
+<<include "header">>
+<main>
+
+P: Excellent! This kind of description will throw off some readers. I have a poem called ‘On Being Brought from Africa to America’. In it, I am always trying to find ways to wrap criticism in beauty. And hope that some people, at least, can find the hidden meanings. 
+
+Let’s continue on. I’ll meet you outside the Bank of England - one of the city’s buildings that haunts me the most. 
+
+/*No audio here*/
+/*MAP NEEDED*/
+
+Depending on where you’ve stopped, Continue down Copthall Ave. Staying straight as the road becomes Andel Ct.
+When you reach the T take right on Thrognorton and then an immediate left onto Bartholomew Lane. On the right hand side of the road you will find the Bank of England Museum entrance, stop threre
+
+<<button "NEXT">>
+    <<set $prevpass to $passage>><<goto "PW-21">>
+<</button>>
+
+</main>
+<<include "footer">>
+
+
+:: PW-21 {"position":"500,2225","size":"100,100"}
+<<set $passage to "PW-21">><<set $nextpassage to "PW-22">>
+<<include "header">>
+<main>
+
+P: Ah, the Bank of England. This is a place I had to visit, because the bank of england is - in my time-period, at least - one of the leading financiers of the slave trade. Many people who work here, who invest here - are the same people who run plantations, own enslaved people, and generally don’t believe that people like me are, well, human. 
+
+But look at it. In your time, are there any signs? Any clues to the history that these bricks hold? How do we get at the secrets, and the hidden stories, of a building like this?
+
+But shh. As I said, I can’t talk so explicitly. So let’s talk about secrets, and do another little creative writing session - in case anybody is watching.
+
+Back home with my mother in West Africa, I used to speak a language called Wolof. Now, in Boston and London, I’m not able to speak my mother-tongue - people would see it as defiant, disobedient. But I made sure I remembered some words, and sometimes I write secretly in my mother-tongue. Try and guess the words to uncover their meanings.
+
+"At night, in my dreams… my <strong>yaay</strong> opens her arms wide to <strong>merhbe</strong> me home. She tells me to <strong>taxawal</strong> my tears because everything will be alright" 
+
+What do you think <strong>yaay</strong> means?
+
+<<textbox "$mother" "">>
+<<button "Enter">>
+	<<set $answers to ["MOTHER","MUM","MAM","MOM","MUMMY","MOMMY"]>>
+    <<if $answers.includes($mother.toUpperCase())>>
+    <<set $prevpass to $passage>><<goto "PW-22A">>
+    <<else>>
+    <<set $prevpass to $passage>><<goto "PW-22B">>
+    <</if>>
+<</button>>
+
+</main>
+<<include "footersimple">>
+
+
+:: PW-22A {"position":"425,2350","size":"100,100"}
+<<set $passage to "PW-22A">>
+<<include "header">>
+<main>
+
+That’s it! Mother, now what do you think <strong>merhbe</strong> means?
+
+"At night, in my dreams… my <strong>mother</strong> opens her arms wide to <strong>merhbe</strong> me home. She tells me to <strong>taxawal</strong> my tears because everything will be alright" 
+
+<<textbox "$welcome" "">>
+<<button "Enter">>
+    <<if $welcome.toUpperCase() is "WELCOME">>
+    <<set $prevpass to $passage>><<goto "PW-23A">>
+    <<else>>
+    <<set $prevpass to $passage>><<goto "PW-23B">>
+    <</if>>
+<</button>>
+
+
+</main>
+<<include "footersimple">>
+
+
+:: PW-22B {"position":"575,2350","size":"100,100"}
+<<set $passage to "PW-22B">>
+<<include "header">>
+<main>
+
+ Not quite. It was mother. Let see if you can get the next one, what do you think <strong>merhbe</strong> means?
+
+"At night, in my dreams… my <strong>mother</strong> opens her arms wide to <strong>merhbe</strong> me home. She tells me to <strong>taxawal</strong> my tears because everything will be alright" 
+
+<<textbox "$welcome" "">>
+<<button "Enter">>
+    <<if $welcome.toUpperCase() is "WELCOME">>
+    <<set $prevpass to $passage>><<goto "PW-23A">>
+    <<else>>
+    <<set $prevpass to $passage>><<goto "PW-23B">>
+    <</if>>
+<</button>>
+
+
+</main>
+<<include "footersimple">>
+
+
+:: PW-23A {"position":"425,2475","size":"100,100"}
+<<set $passage to "PW-23A">>
+<<include "header">>
+<main>
+
+Exactly! It means welcome. Now this last one is tricky, what do you think <strong>taxawal</strong> means??
+
+"At night, in my dreams… my <strong>mother</strong> opens her arms wide to <strong>welcome</strong> me home. She tells me to <strong>taxawal</strong> my tears because everything will be alright" 
+
+<<textbox "$stop" "">>
+<<button "Enter">>
+    <<if $stop.toUpperCase() is "STOP">>
+    <<set $prevpass to $passage>><<goto "PW-24A">>
+    <<else>>
+    <<set $prevpass to $passage>><<goto "PW-24B">>
+    <</if>>
+<</button>>
+
+
+</main>
+<<include "footersimple">>
+
+
+:: PW-23B {"position":"575,2475","size":"100,100"}
+<<set $passage to "PW-23B">>
+<<include "header">>
+<main>
+
+It is actually Welcome. But we’ve still got one more to guess. Now this last one is tricky, what do you think <strong>taxawal</strong> means??
+
+"At night, in my dreams… my <strong>mother</strong> opens her arms wide to <strong>welcome</strong> me home. She tells me to <strong>taxawal</strong> my tears because everything will be alright" 
+
+<<textbox "$stop" "">>
+<<button "Enter">>
+    <<if $stop.toUpperCase() is "STOP">>
+    <<set $prevpass to $passage>><<goto "PW-24A">>
+    <<else>>
+    <<set $prevpass to $passage>><<goto "PW-24B">>
+    <</if>>
+<</button>>
+
+
+</main>
+<<include "footersimple">>
+
+
+:: PW-24A {"position":"425,2600","size":"100,100"}
+<<set $passage to "PW-24A">><<set $nextpassage to "PW-25">>
+<<include "header">>
+<main>
+
+Wow! You got it! Yes it means stop! Nice work. 
+
+"At night, in my dreams… my <strong>mother</strong> opens her arms wide to <strong>welcome</strong> me home. She tells me to <strong>stop</strong> my tears because everything will be alright" 
+
+
+<<timed 3s>>
+    <<set $prevpass to $passage>><<goto "PW-25">>
+<</timed>>
+
+
+</main>
+<<include "footer">>
+
+
+:: PW-24B {"position":"575,2600","size":"100,100"}
+<<set $passage to "PW-24B">><<set $nextpassage to "PW-25">>
+<<include "header">>
+<main>
+
+That one was tough, a few different things would work but taxawal means Stop.
+
+"At night, in my dreams… my <strong>mother</strong> opens her arms wide to <strong>welcome</strong> me home. She tells me to <strong>stop</strong> my tears because everything will be alright" 
+
+
+<<timed 3s>>
+    <<set $prevpass to $passage>><<goto "PW-25">>
+<</timed>>
+
+
+</main>
+<<include "footer">>
+
+
+:: PW-25 {"position":"500,2725","size":"100,100"}
+<<set $passage to "PW-25">><<set $nextpassage to "PW-26">>
+<<include "header">>
+<main>
+
+In my poetry, I have to hide my secrets, including my mother-language, in plain sight. 
+
+Why do I have to lead a life full of secrets? Well, I am read by people who oppose slavery, and those who support it. The people who have… ruined my life, in many ways.. are also the only people right now who see to it that I have a house to live in, and can be here in London to get my book published and hopefully secure my freedom. So it is a fine line to walk. 
+
+On that point, let’s make our way to our final stop, shall we ?
+
+
+<<button "Let's go!">>
+    <<set $prevpass to $passage>><<goto "PW-26">>
+<</button>>
+
+</main>
+<<include "footer">>
+
+
+:: PW-26 {"position":"500,2850","size":"100,100"}
+<<set $passage to "PW-26">><<set $nextpassage to "PW-27">>
+<<include "header">>
+<main>
+
+/*No audio here*/
+
+/*MAP NEEDED*/
+
+Finish walking down Bartholomew Ln. and cross Threadneedle St. 
+Take a left and then immediate Right on to Royal Exchange. 
+That will then run into Cornhill where you will cross over and take a Left. 
+On your right you will spot an old church, St Michael’s Church.
+Just before this is a small alleyway, take a Right down there.
+When you reach the curve in the alley, stop there. 
+
+<<button "Next">>
+    <<set $prevpass to $passage>><<goto "PW-27">>
+<</button>>
+
+
+
+
+
+</main>
+<<include "footersimple">>
+
+
+:: PW-27 {"position":"500,2975","size":"100,100"}
+<<set $passage to "PW-27">><<set $nextpassage to "PW-28">>
+<<include "header">>
+<main>
+
+/*Sound effects*/
+
+And we’re here. The Jamaica Coffee House. Maybe the name has changed in your era? I don’t know. 
+
+I wish you could see what I’m seeing. The men. There are just so many of them inside of there, smoking their pipes, standing on tables, signing documents. This is their prime meeting spot, the great debating chamber of the empire. These men, in the heart of this great city of london, are debating the lives of millions - negotiating slave ship contracts, discussing insurrections, drinking their sugar-laden coffee. Millions of people just like me. Human beings, forced to be enslaved, to have their names and the lives taken away, stripped away from their home countries and their families, to work so hard to build everything you see around you today. It makes me sick.
+
+I can’t let them see me. I just wanted to see these men for myself.  
+
+I’m feeling such a mix of emotions right now, when I think about what is happening. 
+
+I wonder - when you hear about this place, about the uglier sides and stories of London - what is your leading emotion, out of these three? 
+
+<div class ="menu-wrapper">
+<<button "ANGER">>
+    <<set $prevpass to $passage>><<goto "PW-28A">>
+<</button>>
+<<button "SADNESS">>
+    <<set $prevpass to $passage>><<goto "PW-28B">>
+<</button>>
+<<button "CURIOSITY">>
+    <<set $prevpass to $passage>><<goto "PW-28C">>
+<</button>>
+</div>
+
+
+
+</main>
+<<include "footersimple">>
+
+
+:: PW-28A {"position":"375,3100","size":"100,100"}
+<<set $passage to "PW-28A">><<set $nextpassage to "PW-29">>
+<<include "header">>
+<main>
+
+I firmly believe that emotion drives writing - and so this suggests that you might be an artist, or a writer, driven by anger.
+
+I’ll need to go now, but I’ll leave you with a writing tip that suits your temperament. 
+
+Your activist-writer spirit comes from a place of rage. When you feel that anger at injustice, take out your pen and write from that fire within you - use the anger to imagine a better world.
+
+<<timed 3s>>
+    <<set $prevpass to $passage>><<goto "PW-29">>
+<</timed>>
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: PW-28B {"position":"500,3100","size":"100,100"}
+<<set $passage to "PW-28B">><<set $nextpassage to "PW-29">>
+<<include "header">>
+<main>
+
+I firmly believe that emotion drives writing - and so this suggests that you might be an artist, or a writer, driven by sadness.
+
+I’ll need to go now, but I’ll leave you with a writing tip that suits your temperament. 
+
+Your activist-writer spirit comes from a place of sadness, and this will always help you empathise with others. When you feel that sadness and pain at injustice, take out your pen and write to make a change, imagining a world where more joy is possible.
+
+
+<<timed 3s>>
+    <<set $prevpass to $passage>><<goto "PW-29">>
+<</timed>>
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: PW-28C {"position":"625,3100","size":"100,100"}
+<<set $passage to "PW-28C">><<set $nextpassage to "PW-29">>
+<<include "header">>
+<main>
+
+I firmly believe that emotion drives writing - and so this suggests that you might be an artist, or a writer, driven by curiosity. 
+
+I’ll need to go now, but I’ll leave you with a writing tip that suits your temperament. 
+
+ Your activist-writer spirit comes from a place of curiosity. Always ask questions of others to spark your writing ideas - like a journalist, you are needed in this world to document the truth. 
+
+
+<<timed 3s>>
+    <<set $prevpass to $passage>><<goto "PW-29">>
+<</timed>>
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: PW-29 {"position":"500,3250","size":"100,100"}
+<<set $passage to "PW-29">><<set $nextpassage to "end">>
+<<include "header">>
+<main>
+
+P: I hope you take that gift, and use it on to keep writing. 
+ 
+I have to go now - to Aldgate, for a meeting about my book getting published. I heard that in 2022, however, there is a little surprise for you in Leadenhall Market. So I’ll let you head on over there, and I hope our paths might cross again sometime. In the meantime, maybe check out some of my work… perhaps my book will be published and still available to read, in 2022 or whatever time-zone you find yourself in.
+
+
+<<timed 3s>>
+    <<set $prevpass to $passage>><<goto "end">>
+<</timed>>
+
+
+
+</main>
+<<include "footer">>
+
+
