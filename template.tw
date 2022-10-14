@@ -394,6 +394,31 @@ width: 100%;
 }
 }
 
+/* LANDING  */
+main.landing{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 95vh
+}
+
+.landing > h2 {
+  font-family: "Big John";
+  text-align:center;
+  margin-block-end: 0;
+}
+
+.landing > img {
+  width: 70%;
+  max-width: 300px;
+}
+
+/* END */
+main.end > h2{
+  margin-block-end: 0;
+}
+
 /* KEY  */
 .key-wrapper{
   width:fit-content;
@@ -659,9 +684,9 @@ You have two options:
 
 :: landing {"position":"500,100","size":"100,100"}
 <<set $passage to "landing">><<set $nextpassage to "PW-01">><<audio ":all" stop>>
-
-<main>
+<main class="landing">
 <h2>Phillis Wheatley Visits London! Read all about it!</h2>
+<img class="dragon" src="./assets/dragon2.gif">
 
 <<button "Start">><<set $prevpass to $passage>><<goto "PW-01">><</button>>
      
@@ -672,14 +697,18 @@ You have two options:
 
 :: end {"position":"100,975","size":"100,100"}
 <<set $passage to "end">><<audio ":all" stop>><<set $nextpassage to "PW-30">><<set $endmap = setup.generateDirectionsMap([51.518052835799836, -0.08709134662694624], [51.513009117655045, -0.08569552482123345])>>
-<main>
-End location
+<main class="end"><h2>End location</h2>Leadenhall Market
+41-42 Bull's Head Passage
+Gracechurch Street
+EC3V 1LT
 
-$endmap
 <<button "Next">><<set $prevpass to $passage>><<goto "PW-30">><</button>>
 
+$endmap
+
+
 </main>
-<<include "footerend">>
+<<include "footerkey">>
 
 
 :: footerend {"position":"219,485","size":"100,100"}
@@ -693,7 +722,7 @@ $endmap
 
 
 :: footerkey {"position":"1100,100","size":"100,100"}
-<footer><div class="nav-wrapper"><div class="nav-item"><<button "<">><<goto $prevpass>><</button>></div><div class="nav-item"><<button "Start again">><<goto "landing">><</button>></div></div><div class="nav-wrapper end"><div class="nav-item"><<button "Key">><<set $prevpass to $passage>><<goto "PW-32">><</button>> </div><div class="nav-item"><<button "Try another adventure">><<set $prevpass to $passage>><<goto "PW-32adventures">><</button>></div></div></footer>
+<footer><div class="nav-wrapper"><div class="nav-item"><<button "<">><<goto $prevpass>><</button>></div><div class="nav-item"><<button "Start again">><<goto "landing">><</button>></div></div><div class="nav-wrapper"><div class="nav-item"><<button "Show map">><<set $prevpass to $passage>><<goto "end">><</button>></div></div><div class="nav-wrapper end"><div class="nav-item"><<button "Key">><<set $prevpass to $passage>><<goto "PW-32">><</button>> </div><div class="nav-item"><<button "Try another adventure">><<set $prevpass to $passage>><<goto "PW-32adventures">><</button>></div></div></footer>
 
 
 :: footersimple {"position":"100,353","size":"100,100"}
@@ -1659,8 +1688,10 @@ I’ll need to go now, but I’ll leave you with a writing tip that suits your t
 :: PW-30 {"position":"500,3375","size":"100,100"}
 <<set $passage to "PW-30">><<set $nextpassage to "PW-31">><<set $map5 = setup.generateDirectionsMap([51.513009117655045, -0.08569552482123345], [51.512879488263096, -0.08349671512610048])>><<audio ":all" stop>><<audio "PW-30" play>>
 <main><div id="mount"></div>
-$map5
+
 <<button "I'm here">><<set $prevpass to $passage>><<goto "PW-31">><</button>>
+
+$map5
 
 <<timed 0s>><<replace "#mount">>Such an incredible woman, Phillis. 
 She did manage to get her book published: ‘Poems On Various Subjects’. 
