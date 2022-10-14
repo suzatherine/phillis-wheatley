@@ -409,8 +409,13 @@ main.landing{
   margin-block-end: 0;
 }
 
-.landing > img {
-  width: 70%;
+.landing > a {
+  display:flex;    
+  justify-content: center;
+
+}
+.landing > a > img {
+  width: 80%;
   max-width: 300px;
 }
 
@@ -685,14 +690,13 @@ You have two options:
 :: landing {"position":"500,100","size":"100,100"}
 <<set $passage to "landing">><<set $nextpassage to "PW-01">><<audio ":all" stop>>
 <main class="landing">
-<h2>Phillis Wheatley Visits London! Read all about it!</h2>
-<img class="dragon" src="./assets/dragon2.gif">
-
+<h2>Phillis Wheatley Visits London! Read all about it!</h2> 
+ <<link "<img src='./assets/dragon2.gif'>">><<set $prevpass to $passage>><<goto "PW-01">><</link>>
 <<button "Start">><<set $prevpass to $passage>><<goto "PW-01">><</button>>
-     
+    
 
 </main>
-
+<img class="dragon" src="./assets/dragon2.gif">
 
 
 :: end {"position":"100,975","size":"100,100"}

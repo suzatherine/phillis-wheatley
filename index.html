@@ -494,8 +494,13 @@ main.landing{
   margin-block-end: 0;
 }
 
-.landing > img {
-  width: 70%;
+.landing > a {
+  display:flex;    
+  justify-content: center;
+
+}
+.landing > a > img {
+  width: 80%;
   max-width: 300px;
 }
 
@@ -746,13 +751,13 @@ You have two options:
 &lt;/main&gt;
 &lt;&lt;include &quot;footerlost&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="landing" tags="" position="500,100" size="100,100">&lt;&lt;set $passage to &quot;landing&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;PW-01&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
 &lt;main class=&quot;landing&quot;&gt;
-&lt;h2&gt;Phillis Wheatley Visits London! Read all about it!&lt;/h2&gt;
-&lt;img class=&quot;dragon&quot; src=&quot;./assets/dragon2.gif&quot;&gt;
-
+&lt;h2&gt;Phillis Wheatley Visits London! Read all about it!&lt;/h2&gt; 
+ &lt;&lt;link &quot;&lt;img src=&#39;./assets/dragon2.gif&#39;&gt;&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;PW-01&quot;&gt;&gt;&lt;&lt;/link&gt;&gt;
 &lt;&lt;button &quot;Start&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;PW-01&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
-     
+    
 
-&lt;/main&gt;</tw-passagedata><tw-passagedata pid="6" name="end" tags="" position="100,975" size="100,100">&lt;&lt;set $passage to &quot;end&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;set $nextpassage to &quot;PW-30&quot;&gt;&gt;&lt;&lt;set $endmap = setup.generateDirectionsMap([51.518052835799836, -0.08709134662694624], [51.513009117655045, -0.08569552482123345])&gt;&gt;
+&lt;/main&gt;
+&lt;img class=&quot;dragon&quot; src=&quot;./assets/dragon2.gif&quot;&gt;</tw-passagedata><tw-passagedata pid="6" name="end" tags="" position="100,975" size="100,100">&lt;&lt;set $passage to &quot;end&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;set $nextpassage to &quot;PW-30&quot;&gt;&gt;&lt;&lt;set $endmap = setup.generateDirectionsMap([51.518052835799836, -0.08709134662694624], [51.513009117655045, -0.08569552482123345])&gt;&gt;
 &lt;main class=&quot;end&quot;&gt;&lt;h2&gt;End location&lt;/h2&gt;Leadenhall Market
 41-42 Bull&#39;s Head Passage
 Gracechurch Street
