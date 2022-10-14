@@ -15,6 +15,11 @@ Phillis Wheatley Visits London! Read all about it!
 :: Story Stylesheet [stylesheet]
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap");
 
+@font-face {
+  font-family: "Big John";
+  src: url("./assets/fonts/bigjohn.otf") format("opentype");
+}
+
 /* GENERICS */
 html {
   box-sizing: border-box;
@@ -400,7 +405,13 @@ width: 100%;
 
 
 .key-wrapper > img{
-    width:100px
+    width:100px;
+    transform:rotate(4deg)
+}
+.endpoint {
+  font-family: "Big John";
+  font-size:3rem;
+  text-align:center
 }
 
 .adventure-wrapper{
@@ -463,6 +474,7 @@ strong.word{
 color: #ffe17e;
 font-size: 2.5rem
 }
+
 
 :: Story JavaScript [script]
 $('#ui-bar').remove();
@@ -582,32 +594,41 @@ setup.checkForRepeats = (array,element) => {
 
 
 :: StoryInit {"position":"100,100","size":"100,100"}
-<<cacheaudio "PW-05" "https://www.youhavefoundconey.net/tgksnd/PW/PW-05.mp3">>
-<<cacheaudio "PW-06" "https://www.youhavefoundconey.net/tgksnd/PW/PW-06.mp3">>
-<<cacheaudio "PW-07" "https://www.youhavefoundconey.net/tgksnd/PW/PW-07.mp3">>
-<<cacheaudio "PW-08A" "https://www.youhavefoundconey.net/tgksnd/PW/PW-08A.mp3">>
-<<cacheaudio "PW-08B" "https://www.youhavefoundconey.net/tgksnd/PW/PW-08B.mp3">>
-<<cacheaudio "PW-09" "https://www.youhavefoundconey.net/tgksnd/PW/PW-09.mp3">>
-<<cacheaudio "PW-10A" "https://www.youhavefoundconey.net/tgksnd/PW/PW-10A.mp3">>
-<<cacheaudio "PW-10B" "https://www.youhavefoundconey.net/tgksnd/PW/PW-10B.mp3">>
-<<cacheaudio "PW-11" "https://www.youhavefoundconey.net/tgksnd/PW/PW-11.mp3">>
-<<cacheaudio "PW-12B" "https://www.youhavefoundconey.net/tgksnd/PW/PW-12B.mp3">>
-<<cacheaudio "PW-12A" "https://www.youhavefoundconey.net/tgksnd/PW/PW-12A.mp3">>
-<<cacheaudio "PW-13" "https://www.youhavefoundconey.net/tgksnd/PW/PW-13.mp3">>
-<<cacheaudio "PW-15" "https://www.youhavefoundconey.net/tgksnd/PW/PW-15.mp3">>
-<<cacheaudio "PW-16" "https://www.youhavefoundconey.net/tgksnd/PW/PW-16.mp3">>
-<<cacheaudio "PW-19" "https://www.youhavefoundconey.net/tgksnd/PW/PW-19.mp3">>
-<<cacheaudio "PW-20" "https://www.youhavefoundconey.net/tgksnd/PW/PW-20.mp3">>
-<<cacheaudio "PW-21" "https://www.youhavefoundconey.net/tgksnd/PW/PW-21.mp3">>
-<<cacheaudio "PW-22A" "https://www.youhavefoundconey.net/tgksnd/PW/PW-22A.mp3">>
-<<cacheaudio "PW-22B" "https://www.youhavefoundconey.net/tgksnd/PW/PW-22B.mp3">>
-<<cacheaudio "PW-23A" "https://www.youhavefoundconey.net/tgksnd/PW/PW-23A.mp3">>
-<<cacheaudio "PW-23B" "https://www.youhavefoundconey.net/tgksnd/PW/PW-23B.mp3">>
-<<cacheaudio "PW-24A" "https://www.youhavefoundconey.net/tgksnd/PW/PW-24A.mp3">>
-<<cacheaudio "PW-24B" "https://www.youhavefoundconey.net/tgksnd/PW/PW-24B.mp3">>
-<<cacheaudio "PW-25" "https://www.youhavefoundconey.net/tgksnd/PW/PW-25.mp3">>
-<<cacheaudio "PW-27" "https://www.youhavefoundconey.net/tgksnd/PW/PW-27.mp3">>
-<<cacheaudio "PW-28" "https://www.youhavefoundconey.net/tgksnd/PW/PW-28.mp3">>
+<<cacheaudio "PW-01" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW_01.mp3">>
+<<cacheaudio "PW-02A" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/felix/XX_02_greatsolo.mp3">>
+<<cacheaudio "PW-02B" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/felix/XX_02_perfectgroup.mp3">>
+<<cacheaudio "PW-03" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/felix/XX_03.mp3">>
+<<cacheaudio "PW-04" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-04.mp3">>
+<<cacheaudio "PW-05" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-05.mp3">>
+<<cacheaudio "PW-06" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-06.mp3">>
+<<cacheaudio "PW-07" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-07.mp3">>
+<<cacheaudio "PW-08A" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-08A.mp3">>
+<<cacheaudio "PW-08B" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-08B.mp3">>
+<<cacheaudio "PW-09" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-09.mp3">>
+<<cacheaudio "PW-10A" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-10A.mp3">>
+<<cacheaudio "PW-10B" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-10B.mp3">>
+<<cacheaudio "PW-11" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-11.mp3">>
+<<cacheaudio "PW-12B" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-12B.mp3">>
+<<cacheaudio "PW-12A" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-12A.mp3">>
+<<cacheaudio "PW-13" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-13.mp3">>
+<<cacheaudio "PW-15" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-15.mp3">>
+<<cacheaudio "PW-16" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-16.mp3">>
+<<cacheaudio "PW-19" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-19.mp3">>
+<<cacheaudio "PW-20" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-20.mp3">>
+<<cacheaudio "PW-21" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-21.mp3">>
+<<cacheaudio "PW-22A" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-22A.mp3">>
+<<cacheaudio "PW-22B" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-22B.mp3">>
+<<cacheaudio "PW-23A" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-23A.mp3">>
+<<cacheaudio "PW-23B" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-23B.mp3">>
+<<cacheaudio "PW-24A" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-24A.mp3">>
+<<cacheaudio "PW-24B" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-24B.mp3">>
+<<cacheaudio "PW-25" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-25.mp3">>
+<<cacheaudio "PW-27" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-27.mp3">>
+<<cacheaudio "PW-28" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-28.mp3">>
+<<cacheaudio "PW-28" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-28.mp3">>
+<<cacheaudio "PW-29" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-29.mp3">>
+<<cacheaudio "PW-30" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-30.mp3">>
+<<cacheaudio "PW-31" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-31.mp3">>
 <<waitforaudio>>
 
 
@@ -625,9 +646,8 @@ setup.checkForRepeats = (array,element) => {
 
 
 :: lost {"position":"700,50","size":"100,100"}
-<<set $passage to "lost">>
+<<set $passage to "lost">><<audio ":all" stop>>
 <main>
-Sorry to hear that you're lost! 
 You have two options:
 
 <<button "Begin the adventure again">><<goto "landing">><</button>>
@@ -638,15 +658,16 @@ You have two options:
 
 
 :: landing {"position":"500,100","size":"100,100"}
-<<set $passage to "landing">><<set $nextpassage to "PW-01">>
+<<set $passage to "landing">><<set $nextpassage to "PW-01">><<audio ":all" stop>>
 
 <main>
+<h2>Phillis Wheatley Visits London! Read all about it!</h2>
 
 <<button "Start">><<set $prevpass to $passage>><<goto "PW-01">><</button>>
      
 
 </main>
-<<include "footer">>
+
 
 
 :: end {"position":"100,975","size":"100,100"}
@@ -666,52 +687,66 @@ $endmap
 <div class="nav-item"><<button "Start again">><<goto "landing">><</button>></div>
 </footer>
 
+
 :: footerlost {"position":"100,625","size":"100,100"}
 <footer><div class="nav-wrapper "><div class="nav-item"><<button "Back">><<goto $prevpass>><</button>></div></div></footer>
 
 
-
-:: footerkey
+:: footerkey {"position":"1100,100","size":"100,100"}
 <footer><div class="nav-wrapper"><div class="nav-item"><<button "<">><<goto $prevpass>><</button>></div><div class="nav-item"><<button "Start again">><<goto "landing">><</button>></div></div><div class="nav-wrapper end"><div class="nav-item"><<button "Key">><<set $prevpass to $passage>><<goto "PW-32">><</button>> </div><div class="nav-item"><<button "Try another adventure">><<set $prevpass to $passage>><<goto "PW-32adventures">><</button>></div></div></footer>
+
 
 :: footersimple {"position":"100,353","size":"100,100"}
 <footer><div class="nav-item replay"><<button "Replay">><<goto $passage>><</button>> </div>
 <div class="nav-item end"><<button "Take me to the end">><<set $prevpass to $passage>><<goto "lost">><</button>></div></footer>
 
 
-
-:: PW-01 {"position":"449,226","size":"100,100"}
+:: PW-01 {"position":"675,225","size":"100,100"}
 <<set $passage to "PW-01">><<set $nextpassage to "PW-02B">>
-/* <<audio ":all" stop>><<audio "PW-01" play>> */
+<<audio ":all" stop>><<audio "PW-01" play>>
 <main>
 <div id="mount"></div> 
-Felix, keeper of the Maze, and small dragon, here at your service.
 
-I’m opening up the City to you, a City you’ve never experienced before, and its secrets too. For the City is full of treasure. Not the kind of treasure that glitters in candlelight, but something more precious: stories, and the people who carry them. 
 
-You’re now in Dragontime. Past present and future happening all at once. Two thousand years of messy, pulsing, fiery history since the Romans first called their new home Londinium. Almost as long as I’ve been alive. 
+<<timed 2s>><<replace "#mount">>
+  Felix, keeper of the Maze, and small dragon, here at your service.
+  <</replace>>
+<</timed>>
+  <<timed 8s>><<replace "#mount">>
+  I'm opening up the City to you, a City you've never experienced before, and its secrets too. 
+  
+  For the City is full of treasure. 
+  <</replace>><</timed>>
+  <<timed 16s>><<replace "#mount">> Not the kind of treasure that glitters in candlelight, but something more precious: stories, and the people who carry them. 
+  <</replace>><</timed>>
 
-You’ve opened up door #11 into the maze of adventures. 
+<<timed 24s>><<replace "#mount">>You're now in Dragontime. Past present and future happening all at once. Two thousand years of messy, pulsing, fiery history since the Romans first called their new home Londinium. Almost as long as I've been alive. 
+ <</replace>><</timed>>
 
-You’ll be led presently through the streets of the City by a guide from one of its many pasts or possible futures.
+<<timed 38s>><<replace "#mount">>You've opened up door #11 into the maze of adventures. 
 
-If you follow them all the way along their adventure, I’ll be there to meet you near another door, opening into an amazing experience for you, hidden in one of the secret gems of the City.
+You'll be led presently through the streets of the City by a guide from one of its many pasts or possible futures.
+ <</replace>><</timed>>
 
-What kind of amazing experience? Well, it’s a surprise. Otherwise this wouldn’t be an adventure.
+<<timed 47s>><<replace "#mount">>If you follow them all the way along their adventure, I'll be there to meet you near another door, opening into an amazing experience for you, hidden in one of the secret gems of the City.
+ <</replace>><</timed>>
 
-Now are you playing this adventure solo or with a group?
+<<timed 57s>><<replace "#mount">>What kind of amazing experience? Well, it's a surprise. Otherwise this wouldn't be an adventure.
 
+Now - are you playing this adventure solo, or in a group?
  
 <div class="menu-wrapper">
   <<button "Solo">><<set $prevpass to $passage>><<goto "PW-02A">><</button>>
   
   <<button "Group">><<set $prevpass to $passage>><<goto "PW-02B">><</button>></div>
+ <</replace>><</timed>>
 </main>
-<<include "footer">>
+ <<include "footer">>
 
-:: PW-02A {"position":"448,476","size":"100,100"}
-<<set $passage to "PW-02A">><<set $nextpassage to "PW-03.1">>
-/* <<audio ":all" stop>><<audio "PW-02A" play>> */
+
+:: PW-02A {"position":"800,175","size":"100,100"}
+<<set $passage to "PW-02A">><<set $nextpassage to "PW-03">>
+<<audio ":all" stop>><<audio "PW-02A" play>>
 <main>
 <div id="mount"></div> 
 This adventure is perfect for a solo adventurer
@@ -721,9 +756,10 @@ This adventure is perfect for a solo adventurer
 </main>
 <<include "footer">>
 
-:: PW-02B {"position":"448,476","size":"100,100"}
+
+:: PW-02B {"position":"800,300","size":"100,100"}
 <<set $passage to "PW-02B">><<set $nextpassage to "PW-03">>
-/* <<audio ":all" stop>><<audio "PW-02A" play>> */
+<<audio ":all" stop>><<audio "PW-02B" play>>
 <main>
 <div id="mount"></div> 
 This is perfect for a group! If you’re playing on separate devices try to press your buttons at the same time to stay in sync. 
@@ -734,9 +770,10 @@ This is perfect for a group! If you’re playing on separate devices try to pres
 </main>
 <<include "footer">>
 
-:: PW-03 {"position":"448,476","size":"100,100"}
+
+:: PW-03 {"position":"925,250","size":"100,100"}
 <<set $passage to "PW-03">><<set $nextpassage to "PW-04">>
-/* <<audio ":all" stop>><<audio "PW-02A" play>> */
+<<audio ":all" stop>><<audio "PW-03" play>> 
 <main>
 <div id="mount"></div> 
 You can always use the arrows or the replay button if you need to hear or read anything again. 
@@ -753,8 +790,9 @@ Are you ready?
 </main>
 <<include "footer">>
 
-:: PW-04 {"position":"448,476","size":"100,100"}
-<<set $passage to "PW-04">><<set $nextpassage to "PW-05">><<audio ":all" stop>>
+
+:: PW-04 {"position":"1050,250","size":"100,100"}
+<<set $passage to "PW-04">><<set $nextpassage to "PW-05">><<audio ":all" stop>><<audio "PW-04" play>> 
 <main>
 If there is a bench available when you are in 2022, take a seat. 
 
@@ -767,22 +805,34 @@ I’ll find my friend Phillis and send her over to you as your guide, connecting
 <<include "footer">>
 
 
-
 :: PW-05 {"position":"500,225","size":"100,100"}
 <<set $passage to "PW-05">><<set $nextpassage to "PW-06">>
 <<audio ":all" stop>><<audio "PW-05" play>>
 <main>
-PHILLIS: Hello. It’s good to meet you. My name is Phillis Wheatley… I don’t normally talk to strangers, but it’s my first time in London and I could do with some company. 
 
-I’ve heard that today, something strange is going on with the time-zones. I’m in 1773. But there are rumours that people from 2022 - and many different times - are roaming about the streets today. Is that true? Are you … are you … one of the one’s from the future? Your clothes suggest that that would be correct, because I’ve never seen anything like it…
+<div id="mount"></div>
+
+<<timed 0.5s>><<replace "#mount">>Hello, it's good to meet you. My name is Phillis Wheatley.<</replace>><</timed>>
+
+<<timed 4.5s>><<replace "#mount">>I don't normally talk to strangers, but it's my first time in London and I could do with some company.<</replace>><</timed>>
+
+<<timed 11s>><<replace "#mount">>I've heard that today something strange is going on with the time zones.<</replace>><</timed>>
+
+<<timed 15s>><<replace "#mount">>I'm in 1773, but there are rumours that people from 2022 and many different time zones are roaming about the streets today.<</replace>><</timed>>
+
+<<timed 23.5s>><<replace "#mount">>Is that true? Are you... are you one of the ones from the future?<</replace>><</timed>>
+
+<<timed 29.5s>><<replace "#mount">>Your clothes suggests that that would be correct because I've never seen anything like it.
 
 <div class = "menu-wrapper">
 <<button "Yep, I’m living in 2022 and this isn’t weird at all. ">><<set $prevpass to $passage>><<goto "PW-06">><</button>>
 <<button "Ummmmm. Surely this can’t be real. ">><<set $prevpass to $passage>><<goto "PW-06">><</button>>  
 </div>
 
+<</replace>><</timed>>
+
 </main>
-<<include "footersimple">>
+<<include "footer">>
 
 
 :: PW-06 {"position":"500,350","size":"100,100"}
@@ -791,16 +841,34 @@ I’ve heard that today, something strange is going on with the time-zones. I’
 
 <main>
 
-Well. Hmm. Ok. I’m just going to believe it. 
+<div id="mount"></div>
 
-So, imagine for a moment that you are in 1773, like me. People like me are not so common a sight on these streets in London. I’m a young woman of 20, I’m a black woman, and I’m officially enslaved. My… well, I don’t know what to call them.  The… the people who bought me at the age of 7, the people who named me after the ship that brought me from West Africa to America, who still own every right to my humanity and movements… Those people are back in Boston. And for the first time, I’m away from their grasp. They’ve sent me over to London in the pursuit of getting my book published. I’m a poet, you see.  I’ve been writing poetry since I was a young girl and, well, not to blow my own horn but I’m very good at it. 
+<<timed 0s>><<replace "#mount">>Well. Hmm, okay. I'm just going to believe it.<</replace>><</timed>>
 
-But there is another reason I’m in London, however. The book isn’t everything. 
+<<timed 5.5s>><<replace "#mount">>So, imagine for a moment that you're in 1773, like me.<</replace>><</timed>>
 
-Would you like to know the real reason I’m here?
+<<timed 9.5s>><<replace "#mount">>People like me are not so common a sight in these streets in London.<</replace>><</timed>>
+
+<<timed 15s>><<replace "#mount">>I'm a young woman of 20, I'm a black woman. And I'm officially enslaved.<</replace>><</timed>>
+
+<<timed 22s>><<replace "#mount">>My... well, I don't know what to call them.<</replace>><</timed>>
+
+<<timed 25.5s>><<replace "#mount">>The people who bought me aged seven. The people who named me after the ship that brought me from West Africa to America, who still own every right to my humanity and movements...<</replace>><</timed>>
+
+<<timed 36s>><<replace "#mount">>Those people are back in Boston. And for the first time, I'm away from their grasp.<</replace>><</timed>>
+
+<<timed 43s>><<replace "#mount">>They've sent me over to London in the pursuit of getting my book published.<</replace>><</timed>>
+
+<<timed 47.5s>><<replace "#mount">>I'm a poet, you see. I've been writing poetry since I was a young girl, and, well, not to blow my own horn, but I'm very good at it.<</replace>><</timed>>
+
+<<timed 57s>><<replace "#mount">>But there is another reason I'm in London, however. The book isn't everything.<</replace>><</timed>>
+
+<<timed 63s>><<replace "#mount">>Would you like to know the real reason I'm here?
+
 
 <<button "There’s another reason??? Yes please, tell us!">><<set $prevpass to $passage>><<goto "PW-07">><</button>>
  
+ <</replace>><</timed>>
 
 </main>
 <<include "footer">>
@@ -810,13 +878,23 @@ Would you like to know the real reason I’m here?
 <<set $passage to "PW-07">><<set $nextpassage to "PW-08A">>
 <<audio ":all" stop>><<audio "PW-07" play>>
 <main>
-Okay.. hmm. It’s just, I can’t just say these things directly out-loud to anyone - it isn’t safe for me to do so. I need to know if I can trust you. I’ll give you a little puzzle, and if you can solve it, I’ll let you know the reason.
+<div id="mount"></div>
+ 
+<<timed 1s>><<replace "#mount">>Okay, hmm. It's just..., I can't just say these things directly out loud to anyone, it isn't safe for me to do so.<</replace>><</timed>>
 
-I am an island in the Caribbean,  
+<<timed 10s>><<replace "#mount">>I need to know I can trust you.<</replace>><</timed>>
+
+<<timed 12s>><<replace "#mount">>I'll give you a little puzzle, and if you can solve it, I'll let you know the reason.<</replace>><</timed>>
+
+<<timed 17s>><<replace "#mount">>I'm an island in the Caribbean
 And my name used to be Xaymaca.
-Our name was changed for the European maps
-Their preference - a J for an X - has stuck over the years…
+Our name was changed for the European maps. 
+Their preference - a J for an ex has stuck over the years.<</replace>><</timed>>
 
+<<timed 30s>><<replace "#mount">>I'm an island in the Caribbean
+And my name used to be Xaymaca.
+Our name was changed for the European maps. 
+Their preference - a J for an ex has stuck over the years.
 
 <div class = "menu-wrapper">
   <<button "BARBADOS">><<set $prevpass to $passage>><<goto "PW-08B">><</button>>
@@ -824,18 +902,24 @@ Their preference - a J for an X - has stuck over the years…
   <<button "JAMAICA">><<set $prevpass to $passage>><<goto "PW-08A">><</button>>
 </div>
 
+<</replace>><</timed>>
+
 </main>
-<<include "footersimple">>
+<<include "footer">>
 
 
 :: PW-08A {"position":"425,600","size":"100,100"}
 <<set $passage to "PW-08A">><<set $nextpassage to "PW-09">>
 <<audio ":all" stop>><<audio "PW-08A" play>>
 <main>
-Correct: Yes that's it! You're good at this, Here is your next riddle
 
+<div id="mount"></div>
 
-<<timed 3s>><<set $prevpass to $passage>><<goto "PW-09">><</timed>>
+<<timed 0s>><<replace "#mount">>Yes, that's it! You're good at this.<</replace>><</timed>>
+
+<<timed 3s>><<replace "#mount">>Here's your next riddle.<</replace>><</timed>>
+
+<<timed 5.5s>><<set $prevpass to $passage>><<goto "PW-09">><</timed>>
 
 
 </main>
@@ -848,11 +932,13 @@ Correct: Yes that's it! You're good at this, Here is your next riddle
 
 <main>
 
-Oh, not quite - it was JAMAICA. Let's see if you can get this next one…
+<div id="mount"></div>
 
+<<timed 0s>><<replace "#mount">>Oh, not quite - it was 'Jamaica'.<</replace>><</timed>>
 
-<<timed 5s>><<set $prevpass to $passage>><<goto "PW-09">><</timed>>
+<<timed 3s>><<replace "#mount">>Let's see if you can get the next one. <</replace>><</timed>>
 
+<<timed 5.5s>><<set $prevpass to $passage>><<goto "PW-09">><</timed>>
 
 </main>
 <<include "footer">>
@@ -862,16 +948,26 @@ Oh, not quite - it was JAMAICA. Let's see if you can get this next one…
 <<set $passage to "PW-09">><<set $nextpassage to "PW-10A">>
 <<audio ":all" stop>><<audio "PW-09" play>>
 <main>
-Although I’m not magic
-I am a type of bean
+
+<div id="mount"></div>
+
+<<timed 0s>><<replace "#mount">>Although I’m not magic,
+I am a type of bean.
 I’m something you can drink
-That has lots of caffeine
+That has lots of caffeine.<</replace>><</timed>>
+
+<<timed 7.5s>><<replace "#mount">>Although I’m not magic,
+I am a type of bean.
+I’m something you can drink
+That has lots of caffeine.
 
 <div class = "menu-wrapper">
   <<button "COFFEE">><<set $prevpass to $passage>><<goto "PW-10A">><</button>>
   <<button "CHICKPEAS">><<set $prevpass to $passage>><<goto "PW-10B">><</button>>
-  <<button "LIMA BEANS">><<set $prevpass to $passage>><<goto "PW-10B">><</button>>
+  <<button "TEA">><<set $prevpass to $passage>><<goto "PW-10B">><</button>>
 </div>
+
+<</replace>><</timed>>
 
 </main>
 <<include "footer">>
@@ -881,9 +977,10 @@ That has lots of caffeine
 <<set $passage to "PW-10A">><<set $nextpassage to "PW-11">>
 <<audio ":all" stop>><<audio "PW-10A" play>>
 <main>
-Yes, that’s right! Here is your next riddle
 
-<<timed 3s>><<set $prevpass to $passage>><<goto "PW-11">><</timed>>
+Yes, that’s right! Here's your next riddle
+
+<<timed 3.5s>><<set $prevpass to $passage>><<goto "PW-11">><</timed>>
 
 
 </main>
@@ -896,9 +993,13 @@ Yes, that’s right! Here is your next riddle
 
 <main>
 
-Ah, that’s not quite right. It was COFFEE. Let's see if you can get the final one…
+<div id="mount"></div>
 
-<<timed 3s>><<set $prevpass to $passage>><<goto "PW-11">><</timed>>
+<<timed 0s>><<replace "#mount">>Ah, that's not quite right. It was 'coffee'.<</replace>><</timed>>
+
+<<timed 3s>><<replace "#mount">>Let's see if you can get the final one.<</replace>><</timed>>
+
+<<timed 6.5s>><<set $prevpass to $passage>><<goto "PW-11">><</timed>>
 
 
 </main>
@@ -911,11 +1012,17 @@ Ah, that’s not quite right. It was COFFEE. Let's see if you can get the final 
 
 <main>
 
-People live, eat and sleep inside of me,
+<div id="mount"></div>
+
+<<timed 0s>><<replace "#mount">>People live, eat and sleep inside of me,
 They close the door behind them.
 But it would take much more to become a home,
-It would take laughter, good food, and memories over the years. 
+It would take laughter, good food, and memories over the years. <</replace>><</timed>>
 
+<<timed 13s>><<replace "#mount">>People live, eat and sleep inside of me,
+They close the door behind them.
+But it would take much more to become a home,
+It would take laughter, good food, and memories over the years.
 
 <div class = "menu-wrapper">
   <<button "STONE">><<set $prevpass to $passage>><<goto "PW-12B">><</button>>
@@ -923,8 +1030,10 @@ It would take laughter, good food, and memories over the years.
   <<button "POSTBOX">><<set $prevpass to $passage>><<goto "PW-12B">><</button>>
 </div>
 
+<</replace>><</timed>>
+
 </main>
-<<include "footersimple">>
+<<include "footer">>
 
 
 :: PW-12A {"position":"425,1100","size":"100,100"}
@@ -933,9 +1042,9 @@ It would take laughter, good food, and memories over the years.
 
 <main>
 
-Yes that's it! Let’s find out what’s next.
+Yes, that's it! Let’s find out what’s next.
 
-<<timed 3s>><<set $prevpass to $passage>><<goto "PW-13">><</timed>>
+<<timed 4.5s>><<set $prevpass to $passage>><<goto "PW-13">><</timed>>
 
 
 </main>
@@ -948,9 +1057,9 @@ Yes that's it! Let’s find out what’s next.
 
 <main>
 
-Ah, it is actually HOUSE. Let’s find out what’s next.
+Ah, it's actually 'house'. Let’s find out what’s next.
 
-<<timed 3s>><<set $prevpass to $passage>><<goto "PW-13">><</timed>>
+<<timed 5.5s>><<set $prevpass to $passage>><<goto "PW-13">><</timed>>
 
 
 </main>
@@ -963,36 +1072,54 @@ Ah, it is actually HOUSE. Let’s find out what’s next.
 
 <main>
 
-JAMAICA COFFEE HOUSE
+<div id="mount"></div>
 
-So you pieced together Jamaica Coffee House. That’s where I’m heading today. And as you took the time to crack that code, I think I can trust you now. 
+<<timed 0s>><<replace "#mount">>So, you pieced together Jamaica Coffee House. That's where I'm heading today.<</replace>><</timed>>
 
-You wanted to know the reason I’m here? I have a wider project in this city, and it is to get a deeper understanding of this frankly tyrannical institution of slavery, and where better to do that than the place where all the English men with power over the empire meet to socialise? I also think that… and shh, I can’t say this too loudly. I think that the more that I understand this institution… and the more people I meet and win over to my side here, the more likely I can secure my freedom back home. 
+<<timed 5.5s>><<replace "#mount">>And, as you took the time to crack that code, I think I can trust you now.<</replace>><</timed>>
 
-I can’t say much more now. But, I think I can trust you. So do you want to come with me to the Jamaica Coffee House? I’ll teach you some things along the way, to pass the time - and anybody who sees us will think we are simply doing some lovely creative writing exercises across time zones together. Great. Let’s go.
+<<timed 10.5s>><<replace "#mount">>You wanted to know the reason I'm here? I have a wider project in the city.<</replace>><</timed>>
 
-<<timed 3s>><<set $prevpass to $passage>><<goto "PW-14">><</timed>>
+<<timed 15s>><<replace "#mount">>And it is to get a deeper understanding of this frankly tyrannical institution of slavery. And where better to do that than the place where all the Englishmen with power over the empire meet to socialise? <</replace>><</timed>>
 
+<<timed 29s>><<replace "#mount">>I also think that... and shh, I can't saw this too loudly.<</replace>><</timed>>
+
+<<timed 35s>><<replace "#mount">>I think that the more that I understand the institution, and the more people I meet and win over to my side here, the more likely I can secure my freedom back home.<</replace>><</timed>>
+
+<<timed 46s>><<replace "#mount">>I can't say much more now, but I think I can trust you.<</replace>><</timed>>
+
+<<timed 50s>><<replace "#mount">>So, do you want to come with me to the Jamaica Coffee House?<</replace>><</timed>>
+
+<<timed 53.5s>><<replace "#mount">>I'll teach you some things along the way, to pass the time. <</replace>><</timed>>
+
+<<timed 57s>><<replace "#mount">>And anybody who sees us will think we are simply doing some lovely creative writing exercises across time zones together.<</replace>><</timed>>
+
+<<timed 64.5s>><<replace "#mount">>Great. Let's go.<</replace>><</timed>>
+
+
+<<timed 67s>><<set $prevpass to $passage>><<goto "PW-14">><</timed>>
 
 
 </main>
-<<include "footersimple">>
+<<include "footer">>
 
 
 :: PW-14 {"position":"500,1350","size":"100,100"}
 <<set $passage to "PW-14">><<set $nextpassage to "PW-15">>
 <<set $map1 = setup.generateDirectionsMap([51.518045325061316, -0.08708598220911865], [51.516807520813536, -0.0876794990356191])>><<audio ":all" stop>>
-
 <main>
-Head out through the exit in the middle of the long side of the park. You’ll see an odalisque. Go past that, and carefully cross the busy road (London Wall St)
-After you cross turn Right and then immediately Left on Copthall Ave. 
+Head out through the exit in the middle of the long side of the park. You’ll see an odalisque.
 
-<<button "Next">><<set $prevpass to $passage>><<goto "PW-15">><</button>>
+Go past that, and carefully cross the busy road (London Wall Street).
+
+After you cross, turn right and then immediately left on Copthall Avenue. 
 
 $map1
 
+<<button "Next">><<set $prevpass to $passage>><<goto "PW-15">><</button>>
+
 </main>
-<<include "footersimple">>
+<<include "footer">>
 
 
 :: PW-15 {"position":"500,1475","size":"100,100"}
@@ -1000,36 +1127,38 @@ $map1
 <<audio ":all" stop>><<audio "PW-15" play>>
 
 <main>
-
-As poets, people usually want us to describe our surroundings in beautiful ways. 
-
-But being in the centre of London makes me feel a bit… tense. I look around and I see a lot of beauty. Some of these buildings and churches are awe-inspiring, it’s true. I went to the Tower of London yesterday and I was so moved by the spires, the ancient beauty, the jewels. 
-
- But if I’m being honest, how can I view this city’s buildings and beauty in such a simplistic way? What money funded this elegance? Whose labour?
-
+<div id="mount"></div>
 $map2
-
  //Continue down Copthall Ave. When it bears right continue straight onto Angel Ct//
-
-
-
-As you walk to the next stop, I would like you to find the ugliest thing you can. It could be some waste, or a building, or a sign - whatever you want. Just something that makes you feel a little .. disgusted, or uncomfortable. Once you’ve found that thing, press <<button "next">><<set $prevpass to $passage>><<goto "PW-16">><</button>>
-
+<<timed 0s>><<replace "#mount">>As poets, people usually want to describe our surroundings in beautiful ways.<</replace>><</timed>>
+<<timed 5s>><<replace "#mount">>But being in the centre of London makes me feel a bit tense.<</replace>><</timed>>
+<<timed 9.5s>><<replace "#mount">>I look around and I see a lot of beauty. Some of these buildings and churches are awe-inspiring, it's true.<</replace>><</timed>>
+<<timed 16s>><<replace "#mount">>I went to the Tower of London yesterday and I was so moved by the spires, the ancient beauty, the jewels.<</replace>><</timed>>
+<<timed 24s>><<replace "#mount">>But if I'm honest, how can I view this city's buildings and beauty in such a simplistic way? What money funded this elegance, whose labour?<</replace>><</timed>>
+<<timed 34.5s>><<replace "#mount">>As you walk to the next stop, I would like you to find the ugliest thing you can. It could be some waste or a building or a sign, whatever you want.<</replace>><</timed>>
+<<timed 45s>><<replace "#mount">>Just something that makes you feel a little disgusted or uncomfortable. Once you've found that thing, press Next.
+<<button "Next">><<set $prevpass to $passage>><<goto "PW-16">><</button>>
+<</replace>><</timed>>
 
 </main>
 <<include "footer">>
-
 
 
 :: PW-16 {"position":"500,1600","size":"100,100"}
 <<set $passage to "PW-16">><<set $nextpassage to "PW-17">>
 <<audio ":all" stop>><<audio "PW-16" play>>
 <main>
-Now you have your ugly item. 
 
-As mentioned, it isn’t safe for me to be so explicit in my views. If I find some aspects of London repulsive, I need to hide that view within my poetry. 
+<div id="mount"></div>
 
-So let's do some writing.
+<<timed 0s>><<replace "#mount">>Now you have your ugly item.<</replace>><</timed>>
+
+<<timed 3s>><<replace "#mount">>As mentioned, it isn't safe for me to be so explicit in my views. If I find some aspects of London repulsive, I need to hide that view within my poetry.<</replace>><</timed>>
+
+<<timed 14s>><<replace "#mount">>So, let's do some writing.<</replace>><</timed>>
+
+
+<<timed 15.5s>><<replace "#mount">>So, let's do some writing.
 
 Type in the name of your ugly object:
 
@@ -1046,18 +1175,17 @@ Type in the name of your ugly object:
 <</if>>
 <</button>>
 
+<</replace>><</timed>>
 
 </main>
 <<include "footer">>
-
-
-
 
 
 :: PW-17 {"position":"500,1725","size":"100,100"}
 <<set $passage to "PW-17">><<set $nextpassage to "PW-18">>
 <<audio ":all" stop>>
 <main>
+
 Pick a word that makes something sound awful: 
 
 <div class = "menu-wrapper">
@@ -1105,14 +1233,14 @@ Now, pick a word that makes something sound beautiful / epic:
 
 
 :: PW-19 {"position":"500,1975","size":"100,100"}
-<<set $passage to "PW-19">><<set $nextpassage to "PW-20">><<audio ":all" stop>><<audio "PW-19" play>>
+<<set $passage to "PW-19">><<set $nextpassage to "PW-20map">><<audio ":all" stop>><<audio "PW-19" play>>
 <main>
 Let’s put it together, shall we? 
 
-A $awfulword $wonderfulword $uglyitem
+$awfulword $wonderfulword $uglyitem
 
 <<button "NEXT">>
-    <<set $prevpass to $passage>><<goto "PW-20">>
+    <<set $prevpass to $passage>><<goto "PW-20map">>
 <</button>>
 
 </main>
@@ -1135,12 +1263,27 @@ Let’s continue on. I’ll meet you outside the Bank of England - one of the ci
 </main>
 <<include "footer">>
 
-:: PW-20map {"position":"500,2100","size":"100,100"}
+
+:: PW-20map {"position":"650,2100","size":"100,100"}
 <<set $passage to "PW-20">><<set $nextpassage to "PW-21">>
-<<set $map3 = setup.generateDirectionsMap([51.515422242163986, -0.08737064558851383], [51.51429573941737, -0.08758411867361218])>><<audio ":all" stop>>
+<<set $map3 = setup.generateDirectionsMap([51.515422242163986, -0.08737064558851383], [51.51429573941737, -0.08758411867361218])>><<audio ":all" stop>><<audio "PW-20" play>>
 <main>
-Depending on where you’ve stopped, Continue down Copthall Ave. Staying straight as the road becomes Andel Ct.
-When you reach the T take right on Thrognorton and then an immediate left onto Bartholomew Lane. On the right hand side of the road you will find the Bank of England Museum entrance, stop there.
+<div id="mount"></div>
+
+<<timed 0s>><<replace "#mount">>Excellent! This kind of description will throw off some readers.<</replace>><</timed>>
+
+<<timed 5s>><<replace "#mount">>I have a poem called 'On Being Brought from Africa to America'.<</replace>><</timed>>
+
+<<timed 9s>><<replace "#mount">>In it, I am always trying to find ways to wrap criticism in beauty. And hope that some people, at least, can find hidden meanings.<</replace>><</timed>>
+
+<<timed 18.5s>><<replace "#mount">>Let's continue on. I'll meet you outside the Bank of England, one of the city's buildings that haunts me the most.<</replace>><</timed>>
+
+<<timed 26.5s>><<replace "#mount">>
+Depending on where you’ve stopped, continue down Copthall Avenue. Stay straight as the road becomes Andel Court.
+
+When you reach the T, take a right on Thrognorton and then an immediate left onto Bartholomew Lane.
+
+On the righthand side of the road, you will find the Bank of England Museum entrance, stop there.
 
 <<button "NEXT">>
     <<set $prevpass to $passage>><<goto "PW-21">>
@@ -1148,29 +1291,48 @@ When you reach the T take right on Thrognorton and then an immediate left onto B
 
 $map3
 
+<</replace>><</timed>>
+
 </main>
 <<include "footer">>
 
 
 :: PW-21 {"position":"500,2225","size":"100,100"}
-<<set $passage to "PW-21">><<set $nextpassage to "PW-22">><<audio ":all" stop>><<audio "PW-21" play>>
+<<set $passage to "PW-21">><<set $nextpassage to "PW-22A">><<audio ":all" stop>><<audio "PW-21" play>>
 <main>
-Ah, the Bank of England. This is a place I had to visit, because the bank of england is - in my time-period, at least - one of the leading financiers of the slave trade. Many people who work here, who invest here - are the same people who run plantations, own enslaved people, and generally don’t believe that people like me are, well, human. 
 
-But look at it. In your time, are there any signs? Any clues to the history that these bricks hold? How do we get at the secrets, and the hidden stories, of a building like this?
+<div id="mount"></div>
 
-But shh. As I said, I can’t talk so explicitly. So let’s talk about secrets, and do another little creative writing session - in case anybody is watching.
+<<timed 0s>><<replace "#mount">>Ah, the Bank of England.<</replace>><</timed>>
 
-Back home with my mother in West Africa, I used to speak a language called Wolof. Now, in Boston and London, I’m not able to speak my mother-tongue - people would see it as defiant, disobedient. But I made sure I remembered some words, and sometimes I write secretly in my mother-tongue. Try and guess the words to uncover their meanings.
+<<timed 3s>><<replace "#mount">>This is a place I had to visit because the Bank of England is, in my time period at least, one of the leading financers of the slave trade.<</replace>><</timed>>
 
-"At night, in my dreams… my <strong class="word">yaay</strong> opens her arms wide to <strong class="word">merhbe</strong> me home. She tells me to <strong class="word">taxawal</strong> my tears because everything will be alright" 
+<<timed 12s>><<replace "#mount">>Many people who work here, who invest here, are the same people who run plantations, own enslaved people, and generally don't believe that people like me are, well, human. <</replace>><</timed>>
 
-What do you think <strong class="word">yaay</strong> means?
+<<timed 24.5s>><<replace "#mount">>But look at it. In your time, are there any signs? Any clues to the history that these bricks hold?<</replace>><</timed>>
+
+<<timed 33s>><<replace "#mount">>How do we get at the secrets, at the hidden stories of a building like this?<</replace>><</timed>>
+
+<<timed 38s>><<replace "#mount">>But shh, as I said, I can't talk so explicitly. So, let's talk about secrets.<</replace>><</timed>>
+
+<<timed 45s>><<replace "#mount">>And do another little creative writing session in case anybody's watching.<</replace>><</timed>>
+
+<<timed 50s>><<replace "#mount">>Back home with my mother in West Africa, I used to speak a language called Wolof.<</replace>><</timed>>
+
+<<timed 55s>><<replace "#mount">>Now in Boston and London, I'm not able to speak my mother tongue. People would see it as defiant, disobedient. <</replace>><</timed>>
+
+<<timed 62.5s>><<replace "#mount">>But I made sure I remembered some words, and sometimes I write secretly in my mother tongue.<</replace>><</timed>>
+
+<<timed 68.5s>><<replace "#mount">>Try and guess the words to uncover their meaning.<</replace>><</timed>>
+
+<<timed 71s>><<replace "#mount">>"At night, in my dreams… my <strong class="word">yaay</strong> opens her arms wide to <strong class="word">merhbe</strong> me home. She tells me to <strong class="word">taxawal</strong> my tears because everything will be alright." <</replace>><</timed>>
+
+<<timed 82s>><<replace "#mount">>What do you think <strong class="word">yaay</strong> means?
 
 <<textbox "$mother" "">>
 
 <<button "Enter">>
-	<<set $answers to ["MOTHER","MUM","MAM","MOM","MUMMY","MOMMY"]>>
+	<<set $answers to ["MOTHER","MUM","MAM","MOM","MUMMY","MOMMY","MA"]>>
     <<if $answers.includes($mother.toUpperCase())>>
     <<set $prevpass to $passage>><<goto "PW-22A">>
     <<else>>
@@ -1178,16 +1340,19 @@ What do you think <strong class="word">yaay</strong> means?
     <</if>>
 <</button>>
 
+<</replace>><</timed>>
+
 </main>
-<<include "footersimple">>
+<<include "footer">>
 
 
 :: PW-22A {"position":"425,2350","size":"100,100"}
 <<set $passage to "PW-22A">><<set $nextpassage to "PW-23A">><<audio ":all" stop>><<audio "PW-22A" play>>
 <main>
-That’s it! Mother, now what do you think <strong class="word">merhbe</strong> means?
 
-"At night, in my dreams… my mother opens her arms wide to <strong class="word">merhbe</strong> me home. She tells me to <strong class="word">taxawal</strong> my tears because everything will be alright" 
+That’s it! Now what do you think <strong class="word">merhbe</strong> means?
+
+"At night, in my dreams… my mother opens her arms wide to <strong class="word">merhbe</strong> me home. She tells me to <strong class="word">taxawal</strong> my tears because everything will be alright." 
 
 <<textbox "$welcome" "">>
 
@@ -1201,16 +1366,16 @@ That’s it! Mother, now what do you think <strong class="word">merhbe</strong> 
 
 
 </main>
-<<include "footersimple">>
+<<include "footer">>
 
 
 :: PW-22B {"position":"575,2350","size":"100,100"}
 <<set $passage to "PW-22B">><<set $nextpassage to "PW-23A">><<audio ":all" stop>><<audio "PW-22B" play>>
 <main>
 
- Not quite. It was mother. Let see if you can get the next one, what do you think <strong class="word">merhbe</strong> means?
+Not quite. It was <strong class="word">mother</strong>. Let see if you can get the next one, what do you think <strong class="word">merhbe</strong> means?
 
-"At night, in my dreams… my mother opens her arms wide to <strong class="word">merhbe</strong> me home. She tells me to <strong class="word">taxawal</strong> my tears because everything will be alright" 
+"At night, in my dreams… my mother opens her arms wide to <strong class="word">merhbe</strong> me home. She tells me to <strong class="word">taxawal</strong> my tears because everything will be alright." 
 
 <<textbox "$welcome" "">>
 <<button "Enter">>
@@ -1223,15 +1388,20 @@ That’s it! Mother, now what do you think <strong class="word">merhbe</strong> 
 
 
 </main>
-<<include "footersimple">>
+<<include "footer">>
 
 
 :: PW-23A {"position":"425,2475","size":"100,100"}
 <<set $passage to "PW-23A">><<set $nextpassage to "PW-24A">><<audio ":all" stop>><<audio "PW-23A" play>>
 <main>
-Exactly! It means welcome. Now this last one is tricky, what do you think <strong class="word">taxawal</strong> means??
 
-"At night, in my dreams… my mother opens her arms wide to welcome me home. She tells me to <strong class="word">taxawal</strong> my tears because everything will be alright" 
+<div id="mount"></div>
+
+<<timed 0s>><<replace "#mount">>Exactly! It means <strong class="word">welcome</strong>.<</replace>><</timed>>
+
+<<timed 2s>><<replace "#mount">>Now, this last one is tricky. What do you think <strong class="word">taxawal</strong> means?
+
+"At night, in my dreams… my mother opens her arms wide to welcome me home. She tells me to <strong class="word">taxawal</strong> my tears because everything will be alright." 
 
 <<textbox "$stop" "">>
 
@@ -1243,17 +1413,24 @@ Exactly! It means welcome. Now this last one is tricky, what do you think <stron
     <</if>>
 <</button>>
 
+<</replace>><</timed>>
 
 </main>
-<<include "footersimple">>
+<<include "footer">>
 
 
 :: PW-23B {"position":"575,2475","size":"100,100"}
 <<set $passage to "PW-23B">><<set $nextpassage to "PW-24A">><<audio ":all" stop>><<audio "PW-23B" play>>
 <main>
-It is actually Welcome. But we’ve still got one more to guess. Now this last one is tricky, what do you think <strong class="word">taxawal</strong> means??
 
-"At night, in my dreams… my mother opens her arms wide to welcome me home. She tells me to <strong class="word">taxawal</strong> my tears because everything will be alright" 
+
+<div id="mount"></div>
+
+<<timed 0s>><<replace "#mount">>It's actually <strong class="word">welcome</strong>. But we've still got one more to guess.<</replace>><</timed>>
+
+<<timed 4s>><<replace "#mount">>The last one is tricky. What do you think <strong class="word">taxawal</strong> means?
+
+"At night, in my dreams… my mother opens her arms wide to welcome me home. She tells me to <strong class="word">taxawal</strong> my tears because everything will be alright." 
 
 <<textbox "$stop" "">>
 
@@ -1265,20 +1442,21 @@ It is actually Welcome. But we’ve still got one more to guess. Now this last o
     <</if>>
 <</button>>
 
+<</replace>><</timed>>
 
 </main>
-<<include "footersimple">>
+<<include "footer">>
 
 
 :: PW-24A {"position":"425,2600","size":"100,100"}
 <<set $passage to "PW-24A">><<set $nextpassage to "PW-25">><<audio ":all" stop>><<audio "PW-24A" play>>
 <main>
-Wow! You got it! Yes it means stop! Nice work. 
 
-<strong class="word">"At night, in my dreams… my mother opens her arms wide to welcome me home. She tells me to stop my tears because everything will be alright" </strong>
+Wow, you got it! Yes, it means <strong class="word">stop</strong>. Nice work.
 
+<strong class="word">"At night, in my dreams… my mother opens her arms wide to welcome me home. She tells me to stop my tears because everything will be alright." </strong>
 
-<<timed 3s>>
+<<timed 5.5s>>
     <<set $prevpass to $passage>><<goto "PW-25">>
 <</timed>>
 
@@ -1290,12 +1468,13 @@ Wow! You got it! Yes it means stop! Nice work.
 :: PW-24B {"position":"575,2600","size":"100,100"}
 <<set $passage to "PW-24B">><<set $nextpassage to "PW-25">><<audio ":all" stop>><<audio "PW-24B" play>>
 <main>
-That one was tough, a few different things would work but taxawal means Stop.
+
+That one was tough. A few different things would work, but <strong class="word">taxawal</strong> means <strong class="word">stop</strong>.
 
 <strong class="word">"At night, in my dreams… my mother opens her arms wide to welcome me home. She tells me to stop my tears because everything will be alright" </strong>
 
 
-<<timed 3s>>
+<<timed 5.5s>>
     <<set $prevpass to $passage>><<goto "PW-25">>
 <</timed>>
 
@@ -1305,60 +1484,75 @@ That one was tough, a few different things would work but taxawal means Stop.
 
 
 :: PW-25 {"position":"500,2725","size":"100,100"}
-<<set $passage to "PW-25">><<set $nextpassage to "PW-26map">><<audio ":all" stop>><<audio "PW-25" play>>
+<<set $passage to "PW-25">><<set $nextpassage to "PW-26">><<audio ":all" stop>><<audio "PW-25" play>>
 <main>
-In my poetry, I have to hide my secrets, including my mother-language, in plain sight. 
 
-Why do I have to lead a life full of secrets? Well, I am read by people who oppose slavery, and those who support it. The people who have… ruined my life, in many ways.. are also the only people right now who see to it that I have a house to live in, and can be here in London to get my book published and hopefully secure my freedom. So it is a fine line to walk. 
+<div id="mount"></div>
+<<timed 0s>><<replace "#mount">>In my poetry, I have to hide my secrets, including my mother language, in plain sight.<</replace>><</timed>>
 
-On that point, let’s make our way to our final stop, shall we ?
+<<timed 5.5s>><<replace "#mount">>Why do I have to lead a life full of secrets? Well, I am read by people who oppose slavery and those who support it. <</replace>><</timed>>
 
+<<timed 13.5s>><<replace "#mount">>The people who have ruined my life in many ways are also the people right now who see it that I have a house to live in.<</replace>><</timed>>
+
+<<timed 20.5s>><<replace "#mount">>And can be here in London to get my book published, and hopefully secure my freedom! So, it is a fine line to walk.<</replace>><</timed>>
+
+<<timed 29s>><<replace "#mount">>On that point, let's make our way to the final stop, shall we?
 
 <<button "Let's go!">>
-    <<set $prevpass to $passage>><<goto "PW-26map">>
+    <<set $prevpass to $passage>><<goto "PW-26">>
 <</button>>
+
+<</replace>><</timed>>
 
 </main>
 <<include "footer">>
 
 
-:: PW-26map {"position":"500,2850","size":"100,100"}
+:: PW-26 {"position":"500,2850","size":"100,100"}
 <<set $passage to "PW-26">><<set $nextpassage to "PW-27">>
 <<set $map4 = setup.generateDirectionsMap([51.51429573941737, -0.08758411867361218], [51.513009117655045, -0.08569552482123345])>><<audio ":all" stop>>
-<main>
-Finish walking down Bartholomew Ln. and cross Threadneedle St. 
-Take a left and then immediate Right on to Royal Exchange. 
-That will then run into Cornhill where you will cross over and take a Left. 
-On your right you will spot an old church, St Michael’s Church.
-Just before this is a small alleyway, take a Right down there.
+<main>Finish walking down Bartholomew Lane, and cross Threadneedle Street. 
+Take a left and then immediate right on to Royal Exchange. 
+That will then run into Cornhill, where you will cross over and take a left. 
+On your right, you will spot an old church, St Michael’s Church.
+Just before this is a small alleyway, take a right down there.
 When you reach the curve in the alley, stop there. 
-
+$map4
 <<button "Next">>
     <<set $prevpass to $passage>><<goto "PW-27">>
 <</button>>
-
-$map4
-
-
-
-
 </main>
-<<include "footersimple">>
+<<include "footer">>
 
 
 :: PW-27 {"position":"500,2975","size":"100,100"}
 <<set $passage to "PW-27">><<set $nextpassage to "PW-28A">>
 <<audio ":all" stop>><<audio "PW-27" play>>
 <main>
-And we’re here. The Jamaica Coffee House. Maybe the name has changed in your era? I don’t know. 
 
-I wish you could see what I’m seeing. The men. There are just so many of them inside of there, smoking their pipes, standing on tables, signing documents. This is their prime meeting spot, the great debating chamber of the empire. These men, in the heart of this great city of london, are debating the lives of millions - negotiating slave ship contracts, discussing insurrections, drinking their sugar-laden coffee. Millions of people just like me. Human beings, forced to be enslaved, to have their names and the lives taken away, stripped away from their home countries and their families, to work so hard to build everything you see around you today. It makes me sick.
+<div id="mount"></div>
 
-I can’t let them see me. I just wanted to see these men for myself.  
+<<timed 0s>><<replace "#mount">>And we're here, the Jamaica Coffee House. Maybe the name has changed in your era, I don't know.<</replace>><</timed>>
 
-I’m feeling such a mix of emotions right now, when I think about what is happening. 
+<<timed 8.5s>><<replace "#mount">>I wish you could see what I'm seeing. The men. There are just so many of them inside of there, smoking their pipes, standing on tables, signing documents.<</replace>><</timed>>
 
-I wonder - when you hear about this place, about the uglier sides and stories of London - what is your leading emotion, out of these three? 
+<<timed 18s>><<replace "#mount">>This is their prime meeting spot, the great debating chamber of the empire.<</replace>><</timed>>
+
+<<timed 24s>><<replace "#mount">>These men, in the heart of this great city of London, are debating the lives of millions.<</replace>><</timed>>
+
+<<timed 29s>><<replace "#mount">>Negotiating slave ship contracts, discussing insurrections, drinking their sugar-laden coffee.<</replace>><</timed>>
+
+<<timed 35.5s>><<replace "#mount">>Millions of people just like me, human beings forced to be enslaved, to have their names and their lives taken away.<</replace>><</timed>>
+
+<<timed 42.5s>><<replace "#mount">>Stripped away from their home countries and their families, to work so hard to build everything you see around you today. It makes me sick.<</replace>><</timed>>
+
+<<timed 51.5s>><<replace "#mount">>I can't let them see me. I just wanted to see these men for myself.<</replace>><</timed>>
+
+<<timed 57.5s>><<replace "#mount">>I'm feeling such a mix of emotions right now when I think about what is happening.<</replace>><</timed>>
+
+<<timed 63.5s>><<replace "#mount">>I wonder - when you hear about this place, about the uglier sides and stories of London - what is your leading emotion, out of these three?<</replace>><</timed>>
+
+<<timed 70s>><<replace "#mount">>I wonder - when you hear about this place, about the uglier sides and stories of London - what is your leading emotion, out of these three?
 
 <div class ="menu-wrapper">
 <<button "ANGER">>
@@ -1373,27 +1567,25 @@ I wonder - when you hear about this place, about the uglier sides and stories of
 </div>
 
 
+<</replace>><</timed>>
+
 
 </main>
-<<include "footersimple">>
+<<include "footer">>
 
 
 :: PW-28A {"position":"375,3100","size":"100,100"}
 <<set $passage to "PW-28A">><<set $nextpassage to "PW-29">>
-<<audio ":all" stop>>
+<<audio ":all" stop>><<audio "PW-28" play>>
 <main>
-I firmly believe that emotion drives writing - and so this suggests that you might be an artist, or a writer, driven by anger.
 
 I’ll need to go now, but I’ll leave you with a writing tip that suits your temperament. 
 
-Your activist-writer spirit comes from a place of rage. When you feel that anger at injustice, take out your pen and write from that fire within you - use the anger to imagine a better world.
+<strong class="word">Your activist-writer spirit comes from a place of rage. When you feel that anger at injustice, take out your pen and write from that fire within you - use the anger to imagine a better world.</strong>
 
-<<timed 3s>>
+<<button "Thanks for the tip">>
     <<set $prevpass to $passage>><<goto "PW-29">>
-<</timed>>
-
-
-
+<</button>>
 
 </main>
 <<include "footer">>
@@ -1401,19 +1593,17 @@ Your activist-writer spirit comes from a place of rage. When you feel that anger
 
 :: PW-28B {"position":"500,3100","size":"100,100"}
 <<set $passage to "PW-28B">><<set $nextpassage to "PW-29">>
-<<audio ":all" stop>>
+<<audio ":all" stop>><<audio "PW-28" play>>
 <main>
-I firmly believe that emotion drives writing - and so this suggests that you might be an artist, or a writer, driven by sadness.
 
 I’ll need to go now, but I’ll leave you with a writing tip that suits your temperament. 
 
-Your activist-writer spirit comes from a place of sadness, and this will always help you empathise with others. When you feel that sadness and pain at injustice, take out your pen and write to make a change, imagining a world where more joy is possible.
+<strong class="word">Your activist-writer spirit comes from a place of sadness, and this will always help you empathise with others. When you feel that sadness and pain at injustice, take out your pen and write to make a change, imagining a world where more joy is possible.</strong>
 
 
-<<timed 3s>>
+<<button "Thanks for the tip">>
     <<set $prevpass to $passage>><<goto "PW-29">>
-<</timed>>
-
+<</button>>
 
 
 
@@ -1423,19 +1613,16 @@ Your activist-writer spirit comes from a place of sadness, and this will always 
 
 :: PW-28C {"position":"625,3100","size":"100,100"}
 <<set $passage to "PW-28C">><<set $nextpassage to "PW-29">>
-<<audio ":all" stop>>
+<<audio ":all" stop>><<audio "PW-28" play>>
 <main>
-I firmly believe that emotion drives writing - and so this suggests that you might be an artist, or a writer, driven by curiosity. 
 
 I’ll need to go now, but I’ll leave you with a writing tip that suits your temperament. 
 
- Your activist-writer spirit comes from a place of curiosity. Always ask questions of others to spark your writing ideas - like a journalist, you are needed in this world to document the truth. 
+<strong class="word">Your activist-writer spirit comes from a place of curiosity. Always ask questions of others to spark your writing ideas - like a journalist, you are needed in this world to document the truth. </strong>
 
-
-<<timed 3s>>
+<<button "Thanks for the tip">>
     <<set $prevpass to $passage>><<goto "PW-29">>
-<</timed>>
-
+<</button>>
 
 
 
@@ -1444,17 +1631,47 @@ I’ll need to go now, but I’ll leave you with a writing tip that suits your t
 
 
 :: PW-29 {"position":"500,3250","size":"100,100"}
-<<set $passage to "PW-29">><<set $nextpassage to "end">>
-<<audio ":all" stop>>
+<<set $passage to "PW-29">><<set $nextpassage to "PW-30">>
+<<audio ":all" stop>><<audio "PW-29" play>>
 <main>
-I hope you take that gift, and use it on to keep writing. 
- 
-I have to go now - to Aldgate, for a meeting about my book getting published. I heard that in 2022, however, there is a little surprise for you in Leadenhall Market. So I’ll let you head on over there, and I hope our paths might cross again sometime. In the meantime, maybe check out some of my work… perhaps my book will be published and still available to read, in 2022 or whatever time-zone you find yourself in.
 
+<div id="mount"></div>
 
-<<timed 3s>>
+<<timed 0s>><<replace "#mount">>I hope you take that gift and use it to keep on writing.<</replace>><</timed>>
+
+<<timed 4.5s>><<replace "#mount">>I have to go now - to Aldgate for a meeting about my book getting published.<</replace>><</timed>>
+
+<<timed 9.5s>><<replace "#mount">>I heard that in 2022 however, there is a little surprise for you in Leadenhall Market.<</replace>><</timed>>
+
+<<timed 16s>><<replace "#mount">>So, I'll let you head over there, and I hope our paths might cross again some time.<</replace>><</timed>>
+
+<<timed 21s>><<replace "#mount">>In the meantime, maybe check out some of my work. Perhaps my book will be published and still available to read in 2022 or whatever time zone you find yourself in. <</replace>><</timed>>
+
+<<timed 34s>>
     <<set $prevpass to $passage>><<goto "PW-30">>
 <</timed>>
+
+
+</main>
+<<include "footer">>
+
+
+:: PW-30 {"position":"500,3375","size":"100,100"}
+<<set $passage to "PW-30">><<set $nextpassage to "PW-31">><<set $map5 = setup.generateDirectionsMap([51.513009117655045, -0.08569552482123345], [51.512879488263096, -0.08349671512610048])>><<audio ":all" stop>><<audio "PW-30" play>>
+<main><div id="mount"></div>
+$map5
+<<button "I'm here">><<set $prevpass to $passage>><<goto "PW-31">><</button>>
+
+<<timed 0s>><<replace "#mount">>Such an incredible woman, Phillis. 
+She did manage to get her book published: ‘Poems On Various Subjects’. 
+You might like to check it out.<</replace>><</timed>>
+
+<<timed 12s>><<replace "#mount">>For now, let’s get you over to Leadenhall market. 
+Continue past the Jamaica Wine House along the garden. 
+When you get to the end you’ll take a right down St. Michael’s Alley. 
+Then, an immediate left on Bell Inn Yard, just before the open courtyard. 
+Continue straight out to the main road, and Leadenhall Market will be on the other side of the road to the left. 
+Let me know once you’re there<</replace>><</timed>>
 
 
 
@@ -1462,38 +1679,11 @@ I have to go now - to Aldgate, for a meeting about my book getting published. I 
 <<include "footer">>
 
 
-
-
-:: PW-30 {"position":"520,2113","size":"100,100"}
-<<set $passage to "PW-30">><<set $nextpassage to "PW-31">><<set $map5 = setup.generateDirectionsMap([51.513009117655045, -0.08569552482123345], [])>><<audio ":all" stop>>
+:: PW-31 {"position":"500,3500","size":"100,100"}
+<<set $passage to "PW-31">><<set $nextpassage to "PW-32">><<set $map6 = setup.generateDirectionsMap([51.513009117655045, -0.08569552482123345], [])>><<audio ":all" stop>><<audio "PW-31" play>>
 <main><div id="mount"></div>
-Such an incredible woman, Phillis. 
-She did manage to get her book published: ‘Poems On Various Subjects’. 
-You might like to check it out.
-
-For now, let’s get you over to Leadenhall market. 
-Continue past the Jamaica Wine House along the garden. 
-When you get to the end you’ll take a right down St. Michael’s Alley. 
-Then, an immediate left on Bell Inn Yard, just before the open courtyard. 
-Continue straight out to the main road, and Leadenhall Market will be on the other side of the road to the left. 
-Let me know once you’re there
-
-$map5
-
-<<button "I'm here">><<set $prevpass to $passage>><<goto "PW-31">><</button>>
-
-</main>
-<<include "footerkey">>
-
-
-:: PW-31 {"position":"520,2113","size":"100,100"}
-<<set $passage to "PW-31">><<set $nextpassage to "PW-32">><<set $map6 = setup.generateDirectionsMap([51.513009117655045, -0.08569552482123345], [])>><<audio ":all" stop>>
-<main>
-<div id="mount"></div>
 You need to find an empty shop unit, on Bull's Head Passage - number 41-42.
-
 $map6 
-
 When you find the door to the shop, you will need this <<button "key">><<set $prevpass to $passage>><<goto "PW-32">><</button>>
 
 
@@ -1502,17 +1692,18 @@ When you find the door to the shop, you will need this <<button "key">><<set $pr
 <<include "footer">>
 
 
-:: PW-32 {"position":"520,2113","size":"100,100"}
-<<set $passage to "PW-32">><<set $nextpassage to "PW-32adventures">>
-<<audio ":all" stop>>
-/* <<audio "PW-32" play>> */
+:: PW-32 {"position":"500,3625","size":"100,100"}
+<<set $passage to "PW-32">><<set $nextpassage to "PW-32adventures">><<audio ":all" stop>>
 <main>
-<div class="key-wrapper glowing"><img src="./assets/keys-34.png"></div>
+<div class="key-wrapper glowing"><img src="./assets/LeadenhallMarket.png"></div>
+
+<h2 class="endpoint">LEADENHALL MARKET</h2>
 
 </main>
 <<include "footerkey">>
 
-:: PW-32adventures {"position":"520,2113","size":"100,100"}
+
+:: PW-32adventures {"position":"625,3625","size":"100,100"}
 <<set $passage to "PW-32adventures">><<set $nextpassage to "PW-23A">>
 <<audio ":all" stop>>
 <main><h3>Start another adventure...</h3><div class="choices"><div class="adventure-wrapper"><h3>Daniel Mendoza's Art of Boxing </h3><div class="adv-item"><div>4 min walk away</div><<button "Show Map">><<set $prevpass to $passage>><<goto "PW-33A">><</button>></div></div>
@@ -1526,7 +1717,8 @@ When you find the door to the shop, you will need this <<button "key">><<set $pr
 </main>
 <<include "footerkey">>
 
-:: PW-33A {"position":"520,2113","size":"100,100"}
+
+:: PW-33A {"position":"500,3750","size":"100,100"}
 <<set $passage to "PW-33A">><<set $nextpassage to "PW-23A">><<set $map = setup.generateDirectionsMap([51.513009117655045, -0.08569552482123345], [51.51453062140512, -0.080793893254712])>>
 <main><h2>Daniel Mendoza's Art of Boxing</h2>
 $map
@@ -1534,10 +1726,13 @@ $map
 </main>
 <<include "footerkey">>
 
-:: PW-33B {"position":"520,2113","size":"100,100"}
+
+:: PW-33B {"position":"625,3750","size":"100,100"}
 <<set $passage to "PW-33A">><<set $nextpassage to "PW-23A">><<set $map = setup.generateDirectionsMap([51.513009117655045, -0.08569552482123345], [51.51353755742775, -0.08798292883647468])>>
 <main><h2>The Artful Dodges Again</h2>
 $map
 
 </main>
 <<include "footerkey">>
+
+
