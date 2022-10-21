@@ -458,26 +458,8 @@ textarea{
 }
 
 
-/* MAP */
-	.map{
-width: 100%;
-    height: 60vh;
-    border: 0;
-    margin: auto;
-    }
 
 
-.directions-card {
-    display: none!important
-}
-
-@media screen and (min-width: 450px) {
-.map{
-	max-width:60vw;
-	height:50vh;
-	border:0
-}
-}
 
 /* LANDING  */
 main.landing{
@@ -497,8 +479,14 @@ main.landing{
 .landing > a {
   display:flex;    
   justify-content: center;
+  
+}
+
+.landing > a:active{
+  background-color: transparent;
 
 }
+
 .landing > a > img {
   width: 80%;
   max-width: 300px;
@@ -508,7 +496,6 @@ main.landing{
 main.end > h2{
   margin-block-end: 0;
 }
-
 /* KEY  */
 .key-wrapper{
   width:fit-content;
@@ -588,6 +575,28 @@ h2.letter{
 strong.word{
 color: #ffe17e;
 font-size: 2.5rem
+}
+
+/* MAP */
+	.map{
+width: 100%;
+    height: 60vh;
+    border: 0;
+    margin: auto;
+    margin-bottom: 2rem
+    }
+
+
+.directions-card {
+    display: none!important
+}
+
+@media screen and (min-width: 450px) {
+.map{
+	max-width:60vw;
+	height:50vh;
+	border:0
+}
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript">$('#ui-bar').remove();
 $(document.head).find('#style-ui-bar').remove();
 // TYPEWRITER FN
@@ -659,9 +668,9 @@ iFrame.classList.add("map")
 iFrame.setAttribute("loading", "lazy")
 iFrame.setAttribute("referrerpolicy", "no-referrer-when-downgrade")
 // iFrame.setAttribute("allowfullscreen")
-iFrame.setAttribute("src", `https://www.google.com/maps/embed/v1/directions?key=AIzaSyBDRwRTMpSybNcmgkYVX1yZ0YmBbNhs9qU&center=${origin[0]},${origin[1]}&zoom=17&origin=${origin[0]},${origin[1]}&destination=${dest[0]},${dest[1]}&mode=walking`)
+iFrame.setAttribute("src", `https://www.google.com/maps/embed/v1/directions?key=AIzaSyCSbMwR1cUMfnIAh0Pxi0F1N16kvDGZXGU&center=${origin[0]},${origin[1]}&zoom=17&origin=${origin[0]},${origin[1]}&destination=${dest[0]},${dest[1]}&mode=walking`)
 const mount = document.getElementById("mapMount")
-// console.log(iFrame)
+console.log(iFrame)
 return iFrame
 // this.mapMount.appendChild(iFrame)
 }
@@ -674,7 +683,7 @@ iFrame.classList.add("map")
 iFrame.setAttribute("loading", "lazy")
 iFrame.setAttribute("referrerpolicy", "no-referrer-when-downgrade")
 // iFrame.setAttribute("allowfullscreen")
-iFrame.setAttribute("src", `https://www.google.com/maps/embed/v1/directions?key=AIzaSyBDRwRTMpSybNcmgkYVX1yZ0YmBbNhs9qU&center=${origin[0]},${origin[1]}&zoom=18&origin=${origin[0]},${origin[1]}&destination=${dest[0]},${dest[1]}&waypoints=${wayp}&mode=walking`)
+iFrame.setAttribute("src", `https://www.google.com/maps/embed/v1/directions?key=AIzaSyCSbMwR1cUMfnIAh0Pxi0F1N16kvDGZXGU&center=${origin[0]},${origin[1]}&zoom=18&origin=${origin[0]},${origin[1]}&destination=${dest[0]},${dest[1]}&waypoints=${wayp}&mode=walking`)
 const mount = document.getElementById("mapMount")
 // console.log(iFrame)
 return iFrame
@@ -701,41 +710,41 @@ setup.checkForRepeats = (array,element) => {
  const arrayCopy = [...array];
  const duplicates = arrayCopy.filter((item, index) => index !== arrayCopy.indexOf(item));
  return duplicates.contains(element)
-}</script><tw-passagedata pid="1" name="StoryInit" tags="" position="100,100" size="100,100">&lt;&lt;cacheaudio &quot;PW-01&quot; &quot;https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW_01.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;PW-02A&quot; &quot;https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/felix/XX_02_greatsolo.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;PW-02B&quot; &quot;https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/felix/XX_02_perfectgroup.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;PW-03&quot; &quot;https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/felix/XX_03.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;PW-04&quot; &quot;https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-04.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;PW-05&quot; &quot;https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-05.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;PW-06&quot; &quot;https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-06.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;PW-07&quot; &quot;https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-07.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;PW-08A&quot; &quot;https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-08A.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;PW-08B&quot; &quot;https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-08B.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;PW-09&quot; &quot;https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-09.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;PW-10A&quot; &quot;https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-10A.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;PW-10B&quot; &quot;https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-10B.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;PW-11&quot; &quot;https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-11.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;PW-12B&quot; &quot;https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-12B.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;PW-12A&quot; &quot;https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-12A.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;PW-13&quot; &quot;https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-13.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;PW-15&quot; &quot;https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-15.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;PW-16&quot; &quot;https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-16.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;PW-19&quot; &quot;https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-19.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;PW-20&quot; &quot;https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-20.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;PW-21&quot; &quot;https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-21.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;PW-22A&quot; &quot;https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-22A.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;PW-22B&quot; &quot;https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-22B.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;PW-23A&quot; &quot;https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-23A.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;PW-23B&quot; &quot;https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-23B.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;PW-24A&quot; &quot;https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-24A.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;PW-24B&quot; &quot;https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-24B.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;PW-25&quot; &quot;https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-25.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;PW-27&quot; &quot;https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-27.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;PW-28&quot; &quot;https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-28.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;PW-28&quot; &quot;https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-28.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;PW-29&quot; &quot;https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-29.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;PW-30&quot; &quot;https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-30.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;PW-31&quot; &quot;https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/PW/PW-31.mp3&quot;&gt;&gt;
+}</script><tw-passagedata pid="1" name="StoryInit" tags="" position="100,100" size="100,100">&lt;&lt;cacheaudio &quot;PW-01&quot; &quot;https://www.youhavefoundconey.net/tgksnd/PW/PW_01.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;PW-02A&quot; &quot;https://www.youhavefoundconey.net/tgksnd/felix/XX_02_greatsolo.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;PW-02B&quot; &quot;https://www.youhavefoundconey.net/tgksnd/felix/XX_02_perfectgroup.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;PW-03&quot; &quot;https://www.youhavefoundconey.net/tgksnd/felix/XX_03.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;PW-04&quot; &quot;https://www.youhavefoundconey.net/tgksnd/PW/PW-04.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;PW-05&quot; &quot;https://www.youhavefoundconey.net/tgksnd/PW/PW-05.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;PW-06&quot; &quot;https://www.youhavefoundconey.net/tgksnd/PW/PW-06.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;PW-07&quot; &quot;https://www.youhavefoundconey.net/tgksnd/PW/PW-07.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;PW-08A&quot; &quot;https://www.youhavefoundconey.net/tgksnd/PW/PW-08A.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;PW-08B&quot; &quot;https://www.youhavefoundconey.net/tgksnd/PW/PW-08B.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;PW-09&quot; &quot;https://www.youhavefoundconey.net/tgksnd/PW/PW-09.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;PW-10A&quot; &quot;https://www.youhavefoundconey.net/tgksnd/PW/PW-10A.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;PW-10B&quot; &quot;https://www.youhavefoundconey.net/tgksnd/PW/PW-10B.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;PW-11&quot; &quot;https://www.youhavefoundconey.net/tgksnd/PW/PW-11.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;PW-12B&quot; &quot;https://www.youhavefoundconey.net/tgksnd/PW/PW-12B.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;PW-12A&quot; &quot;https://www.youhavefoundconey.net/tgksnd/PW/PW-12A.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;PW-13&quot; &quot;https://www.youhavefoundconey.net/tgksnd/PW/PW-13.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;PW-15&quot; &quot;https://www.youhavefoundconey.net/tgksnd/PW/PW-15.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;PW-16&quot; &quot;https://www.youhavefoundconey.net/tgksnd/PW/PW-16.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;PW-19&quot; &quot;https://www.youhavefoundconey.net/tgksnd/PW/PW-19.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;PW-20&quot; &quot;https://www.youhavefoundconey.net/tgksnd/PW/PW-20.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;PW-21&quot; &quot;https://www.youhavefoundconey.net/tgksnd/PW/PW-21.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;PW-22A&quot; &quot;https://www.youhavefoundconey.net/tgksnd/PW/PW-22A.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;PW-22B&quot; &quot;https://www.youhavefoundconey.net/tgksnd/PW/PW-22B.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;PW-23A&quot; &quot;https://www.youhavefoundconey.net/tgksnd/PW/PW-23A.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;PW-23B&quot; &quot;https://www.youhavefoundconey.net/tgksnd/PW/PW-23B.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;PW-24A&quot; &quot;https://www.youhavefoundconey.net/tgksnd/PW/PW-24A.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;PW-24B&quot; &quot;https://www.youhavefoundconey.net/tgksnd/PW/PW-24B.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;PW-25&quot; &quot;https://www.youhavefoundconey.net/tgksnd/PW/PW-25.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;PW-27&quot; &quot;https://www.youhavefoundconey.net/tgksnd/PW/PW-27.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;PW-28&quot; &quot;https://www.youhavefoundconey.net/tgksnd/PW/PW-28.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;PW-28&quot; &quot;https://www.youhavefoundconey.net/tgksnd/PW/PW-28.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;PW-29&quot; &quot;https://www.youhavefoundconey.net/tgksnd/PW/PW-29.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;PW-30&quot; &quot;https://www.youhavefoundconey.net/tgksnd/PW/PW-30.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;PW-31&quot; &quot;https://www.youhavefoundconey.net/tgksnd/PW/PW-31.mp3&quot;&gt;&gt;
 &lt;&lt;waitforaudio&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="header" tags="" position="100,225" size="100,100">&lt;header&gt;Phillis Wheatley Visits London! Read all about it!&lt;/header&gt;</tw-passagedata><tw-passagedata pid="3" name="footer" tags="" position="100,375" size="100,100">&lt;footer&gt;
 &lt;div class=&quot;nav-item back&quot;&gt;&lt;&lt;button &quot;&lt;&quot;&gt;&gt;&lt;&lt;goto $prevpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;
 &lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;Replay&quot;&gt;&gt;&lt;&lt;goto $passage&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;/div&gt;
@@ -757,7 +766,7 @@ You have two options:
     
 
 &lt;/main&gt;
-&lt;img class=&quot;dragon&quot; src=&quot;./assets/dragon2.gif&quot;&gt;</tw-passagedata><tw-passagedata pid="6" name="end" tags="" position="100,975" size="100,100">&lt;&lt;set $passage to &quot;end&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;set $nextpassage to &quot;PW-30&quot;&gt;&gt;&lt;&lt;set $endmap = setup.generateDirectionsMap([51.518052835799836, -0.08709134662694624], [51.513009117655045, -0.08569552482123345])&gt;&gt;
+&lt;img class=&quot;dragon&quot; src=&quot;./assets/dragon2.gif&quot;&gt;</tw-passagedata><tw-passagedata pid="6" name="end" tags="" position="100,975" size="100,100">&lt;&lt;set $passage to &quot;end&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;set $nextpassage to &quot;PW-30&quot;&gt;&gt;&lt;&lt;set $endmap = setup.generateDirectionsMap([51.518052835799836, -0.08709134662694624], [51.51265276719837, -0.08396727327936213])&gt;&gt;
 &lt;main class=&quot;end&quot;&gt;&lt;h2&gt;End location&lt;/h2&gt;Leadenhall Market
 41-42 Bull&#39;s Head Passage
 Gracechurch Street
@@ -815,7 +824,7 @@ Now - are you playing this adventure solo, or in a group?
 &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;PW-02A&quot; play&gt;&gt;
 &lt;main&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt; 
-This adventure is perfect for a solo adventurer
+This adventure is great for a solo adventurer!
 
 &lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;PW-03&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
  
@@ -852,7 +861,7 @@ If there is a bench available when you are in 2022, take a seat.
 
 I’ll find my friend Phillis and send her over to you as your guide, connecting from the year 1773.
 
-&lt;&lt;timed 8s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;PW-05&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 18s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;PW-05&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
 
 &lt;/main&gt;
@@ -931,12 +940,12 @@ I’ll find my friend Phillis and send her over to you as your guide, connecting
 &lt;&lt;timed 17s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;I&#39;m an island in the Caribbean
 And my name used to be Xaymaca.
 Our name was changed for the European maps. 
-Their preference - a J for an ex has stuck over the years.&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+Their preference - a J for an X has stuck over the years.&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
 &lt;&lt;timed 30s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;I&#39;m an island in the Caribbean
 And my name used to be Xaymaca.
 Our name was changed for the European maps. 
-Their preference - a J for an ex has stuck over the years.
+Their preference - a J for an X has stuck over the years.
 
 &lt;div class = &quot;menu-wrapper&quot;&gt;
   &lt;&lt;button &quot;BARBADOS&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;PW-08B&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
@@ -1088,7 +1097,7 @@ Ah, it&#39;s actually &#39;house&#39;. Let’s find out what’s next.
 
 &lt;&lt;timed 15s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;And it is to get a deeper understanding of this frankly tyrannical institution of slavery. And where better to do that than the place where all the Englishmen with power over the empire meet to socialise? &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 29s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;I also think that... and shh, I can&#39;t saw this too loudly.&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 29s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;I also think that... and shh, I can&#39;t say this too loudly.&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
 &lt;&lt;timed 35s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;I think that the more that I understand the institution, and the more people I meet and win over to my side here, the more likely I can secure my freedom back home.&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
@@ -1406,7 +1415,7 @@ Wow, you got it! Yes, it means &lt;strong class=&quot;word&quot;&gt;stop&lt;/str
 
 &lt;strong class=&quot;word&quot;&gt;&quot;At night, in my dreams… my mother opens her arms wide to welcome me home. She tells me to stop my tears because everything will be alright.&quot; &lt;/strong&gt;
 
-&lt;&lt;timed 5.5s&gt;&gt;
+&lt;&lt;timed 7s&gt;&gt;
     &lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;PW-25&quot;&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
@@ -1571,7 +1580,7 @@ I’ll need to go now, but I’ll leave you with a writing tip that suits your t
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="50" name="PW-30" tags="" position="500,3375" size="100,100">&lt;&lt;set $passage to &quot;PW-30&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;PW-31&quot;&gt;&gt;&lt;&lt;set $map5 = setup.generateDirectionsMap([51.513009117655045, -0.08569552482123345], [51.512879488263096, -0.08349671512610048])&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;PW-30&quot; play&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="50" name="PW-30" tags="" position="500,3375" size="100,100">&lt;&lt;set $passage to &quot;PW-30&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;PW-31&quot;&gt;&gt;&lt;&lt;set $map5 = setup.generateDirectionsMap([51.512939, -0.085687], [51.512598, -0.084575])&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;PW-30&quot; play&gt;&gt;
 &lt;main&gt;&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 
 &lt;&lt;button &quot;I&#39;m here&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;PW-31&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
@@ -1592,7 +1601,7 @@ Let me know once you’re there&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="51" name="PW-31" tags="" position="500,3500" size="100,100">&lt;&lt;set $passage to &quot;PW-31&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;PW-32&quot;&gt;&gt;&lt;&lt;set $map6 = setup.generateDirectionsMap([51.513009117655045, -0.08569552482123345], [])&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;PW-31&quot; play&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="51" name="PW-31" tags="" position="500,3500" size="100,100">&lt;&lt;set $passage to &quot;PW-31&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;PW-32&quot;&gt;&gt;&lt;&lt;set $map6 = setup.generateDirectionsMap([51.512598, -0.084575], [51.51265276719837, -0.08396727327936213])&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;PW-31&quot; play&gt;&gt;
 &lt;main&gt;&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 You need to find an empty shop unit, on Bull&#39;s Head Passage - number 41-42.
 $map6 

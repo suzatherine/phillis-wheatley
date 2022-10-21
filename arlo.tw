@@ -514,6 +514,7 @@ width: 100%;
 }
 }
 
+
 :: Story JavaScript [script]
 $('#ui-bar').remove();
 $(document.head).find('#style-ui-bar').remove();
@@ -586,9 +587,9 @@ iFrame.classList.add("map")
 iFrame.setAttribute("loading", "lazy")
 iFrame.setAttribute("referrerpolicy", "no-referrer-when-downgrade")
 // iFrame.setAttribute("allowfullscreen")
-iFrame.setAttribute("src", `https://www.google.com/maps/embed/v1/directions?key=AIzaSyCSbMwR1cUMfnIAh0Pxi0F1N16kvDGZXGU&center=${origin[0]},${origin[1]}&zoom=17&origin=${origin[0]},${origin[1]}&destination=${dest[0]},${dest[1]}&mode=walking`)
+iFrame.setAttribute("src", `https://www.google.com/maps/embed/v1/directions?key=AIzaSyBDRwRTMpSybNcmgkYVX1yZ0YmBbNhs9qU&center=${origin[0]},${origin[1]}&zoom=17&origin=${origin[0]},${origin[1]}&destination=${dest[0]},${dest[1]}&mode=walking`)
 const mount = document.getElementById("mapMount")
-console.log(iFrame)
+// console.log(iFrame)
 return iFrame
 // this.mapMount.appendChild(iFrame)
 }
@@ -601,7 +602,7 @@ iFrame.classList.add("map")
 iFrame.setAttribute("loading", "lazy")
 iFrame.setAttribute("referrerpolicy", "no-referrer-when-downgrade")
 // iFrame.setAttribute("allowfullscreen")
-iFrame.setAttribute("src", `https://www.google.com/maps/embed/v1/directions?key=AIzaSyCSbMwR1cUMfnIAh0Pxi0F1N16kvDGZXGU&center=${origin[0]},${origin[1]}&zoom=18&origin=${origin[0]},${origin[1]}&destination=${dest[0]},${dest[1]}&waypoints=${wayp}&mode=walking`)
+iFrame.setAttribute("src", `https://www.google.com/maps/embed/v1/directions?key=AIzaSyBDRwRTMpSybNcmgkYVX1yZ0YmBbNhs9qU&center=${origin[0]},${origin[1]}&zoom=18&origin=${origin[0]},${origin[1]}&destination=${dest[0]},${dest[1]}&waypoints=${wayp}&mode=walking`)
 const mount = document.getElementById("mapMount")
 // console.log(iFrame)
 return iFrame
@@ -708,7 +709,7 @@ You have two options:
 
 
 :: end {"position":"100,975","size":"100,100"}
-<<set $passage to "end">><<audio ":all" stop>><<set $nextpassage to "PW-30">><<set $endmap = setup.generateDirectionsMap([51.518052835799836, -0.08709134662694624], [51.51265276719837, -0.08396727327936213])>>
+<<set $passage to "end">><<audio ":all" stop>><<set $nextpassage to "PW-30">><<set $endmap = setup.generateDirectionsMap([51.518052835799836, -0.08709134662694624], [51.513009117655045, -0.08569552482123345])>>
 <main class="end"><h2>End location</h2>Leadenhall Market
 41-42 Bull's Head Passage
 Gracechurch Street
@@ -1497,7 +1498,7 @@ Wow, you got it! Yes, it means <strong class="word">stop</strong>. Nice work.
 
 <strong class="word">"At night, in my dreams… my mother opens her arms wide to welcome me home. She tells me to stop my tears because everything will be alright." </strong>
 
-<<timed 7s>>
+<<timed 5.5s>>
     <<set $prevpass to $passage>><<goto "PW-25">>
 <</timed>>
 
@@ -1698,7 +1699,7 @@ I’ll need to go now, but I’ll leave you with a writing tip that suits your t
 
 
 :: PW-30 {"position":"500,3375","size":"100,100"}
-<<set $passage to "PW-30">><<set $nextpassage to "PW-31">><<set $map5 = setup.generateDirectionsMap([51.512939, -0.085687], [51.512598, -0.084575])>><<audio ":all" stop>><<audio "PW-30" play>>
+<<set $passage to "PW-30">><<set $nextpassage to "PW-31">><<set $map5 = setup.generateDirectionsMap([51.513009117655045, -0.08569552482123345], [51.512879488263096, -0.08349671512610048])>><<audio ":all" stop>><<audio "PW-30" play>>
 <main><div id="mount"></div>
 
 <<button "I'm here">><<set $prevpass to $passage>><<goto "PW-31">><</button>>
@@ -1723,7 +1724,7 @@ Let me know once you’re there<</replace>><</timed>>
 
 
 :: PW-31 {"position":"500,3500","size":"100,100"}
-<<set $passage to "PW-31">><<set $nextpassage to "PW-32">><<set $map6 = setup.generateDirectionsMap([51.512598, -0.084575], [51.51265276719837, -0.08396727327936213])>><<audio ":all" stop>><<audio "PW-31" play>>
+<<set $passage to "PW-31">><<set $nextpassage to "PW-32">><<set $map6 = setup.generateDirectionsMap([51.513009117655045, -0.08569552482123345], [])>><<audio ":all" stop>><<audio "PW-31" play>>
 <main><div id="mount"></div>
 You need to find an empty shop unit, on Bull's Head Passage - number 41-42.
 $map6 

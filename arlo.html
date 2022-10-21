@@ -100,6 +100,11 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 	</div>
 	<tw-storydata name="Phillis Wheatley Visits London! Read all about it!" startnode="5" creator="Twine" creator-version="2.5.1" format="SugarCube" format-version="2.36.1" ifid="BAAC7F8F-3540-4F29-ABBE-2AAFD00ADBCC" options="" tags="" zoom="0.6" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap");
 
+@font-face {
+  font-family: "Big John";
+  src: url("./assets/fonts/bigjohn.otf") format("opentype");
+}
+
 /* GENERICS */
 html {
   box-sizing: border-box;
@@ -474,6 +479,36 @@ width: 100%;
 }
 }
 
+/* LANDING  */
+main.landing{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 95vh
+}
+
+.landing > h2 {
+  font-family: "Big John";
+  text-align:center;
+  margin-block-end: 0;
+}
+
+.landing > a {
+  display:flex;    
+  justify-content: center;
+
+}
+.landing > a > img {
+  width: 80%;
+  max-width: 300px;
+}
+
+/* END */
+main.end > h2{
+  margin-block-end: 0;
+}
+
 /* KEY  */
 .key-wrapper{
   width:fit-content;
@@ -485,7 +520,13 @@ width: 100%;
 
 
 .key-wrapper > img{
-    width:100px
+    width:100px;
+    transform:rotate(4deg)
+}
+.endpoint {
+  font-family: "Big John";
+  font-size:3rem;
+  text-align:center
 }
 
 .adventure-wrapper{
@@ -661,9 +702,9 @@ setup.checkForRepeats = (array,element) => {
  const duplicates = arrayCopy.filter((item, index) => index !== arrayCopy.indexOf(item));
  return duplicates.contains(element)
 }</script><tw-passagedata pid="1" name="StoryInit" tags="" position="100,100" size="100,100">&lt;&lt;cacheaudio &quot;PW-01&quot; &quot;https://www.youhavefoundconey.net/tgksnd/PW/PW_01.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;PW-02A&quot; &quot;https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/felix/XX_02_greatsolo.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;PW-02B&quot; &quot;https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/felix/XX_02_perfectgroup.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;PW-03&quot; &quot;https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/felix/XX_03.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;PW-02A&quot; &quot;https://www.youhavefoundconey.net/tgksnd/felix/XX_02_greatsolo.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;PW-02B&quot; &quot;https://www.youhavefoundconey.net/tgksnd/felix/XX_02_perfectgroup.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;PW-03&quot; &quot;https://www.youhavefoundconey.net/tgksnd/felix/XX_03.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;PW-04&quot; &quot;https://www.youhavefoundconey.net/tgksnd/PW/PW-04.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;PW-05&quot; &quot;https://www.youhavefoundconey.net/tgksnd/PW/PW-05.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;PW-06&quot; &quot;https://www.youhavefoundconey.net/tgksnd/PW/PW-06.mp3&quot;&gt;&gt;
@@ -700,34 +741,37 @@ setup.checkForRepeats = (array,element) => {
 &lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;Replay&quot;&gt;&gt;&lt;&lt;goto $passage&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;/div&gt;
 &lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;Take me to the end&quot;&gt;&gt;&lt;&lt;goto &quot;lost&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;
 &lt;div class=&quot;nav-item forward&quot;&gt;&lt;&lt;button &quot;&gt;&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpassage&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;
-&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="4" name="lost" tags="" position="700,50" size="100,100">&lt;&lt;set $passage to &quot;lost&quot;&gt;&gt;
+&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="4" name="lost" tags="" position="700,50" size="100,100">&lt;&lt;set $passage to &quot;lost&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
 &lt;main&gt;
-Sorry to hear that you&#39;re lost! 
 You have two options:
 
 &lt;&lt;button &quot;Begin the adventure again&quot;&gt;&gt;&lt;&lt;goto &quot;landing&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 
 &lt;&lt;button &quot;Take me straight to the end location!&quot;&gt;&gt;&lt;&lt;goto &quot;end&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/main&gt;
-&lt;&lt;include &quot;footerlost&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="landing" tags="" position="500,100" size="100,100">&lt;&lt;set $passage to &quot;landing&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;PW-01&quot;&gt;&gt;
-
-&lt;main&gt;
-
+&lt;&lt;include &quot;footerlost&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="landing" tags="" position="500,100" size="100,100">&lt;&lt;set $passage to &quot;landing&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;PW-01&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
+&lt;main class=&quot;landing&quot;&gt;
+&lt;h2&gt;Phillis Wheatley Visits London! Read all about it!&lt;/h2&gt; 
+ &lt;&lt;link &quot;&lt;img src=&#39;./assets/dragon2.gif&#39;&gt;&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;PW-01&quot;&gt;&gt;&lt;&lt;/link&gt;&gt;
 &lt;&lt;button &quot;Start&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;PW-01&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
-     
+    
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="6" name="end" tags="" position="100,975" size="100,100">&lt;&lt;set $passage to &quot;end&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;set $nextpassage to &quot;PW-30&quot;&gt;&gt;&lt;&lt;set $endmap = setup.generateDirectionsMap([51.518052835799836, -0.08709134662694624], [51.513009117655045, -0.08569552482123345])&gt;&gt;
-&lt;main&gt;
-End location
+&lt;img class=&quot;dragon&quot; src=&quot;./assets/dragon2.gif&quot;&gt;</tw-passagedata><tw-passagedata pid="6" name="end" tags="" position="100,975" size="100,100">&lt;&lt;set $passage to &quot;end&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;set $nextpassage to &quot;PW-30&quot;&gt;&gt;&lt;&lt;set $endmap = setup.generateDirectionsMap([51.518052835799836, -0.08709134662694624], [51.513009117655045, -0.08569552482123345])&gt;&gt;
+&lt;main class=&quot;end&quot;&gt;&lt;h2&gt;End location&lt;/h2&gt;Leadenhall Market
+41-42 Bull&#39;s Head Passage
+Gracechurch Street
+EC3V 1LT
 
-$endmap
 &lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;PW-30&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 
+$endmap
+
+
 &lt;/main&gt;
-&lt;&lt;include &quot;footerend&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="footerend" tags="" position="219,485" size="100,100">&lt;footer&gt;
+&lt;&lt;include &quot;footerkey&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="footerend" tags="" position="219,485" size="100,100">&lt;footer&gt;
 &lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;Start again&quot;&gt;&gt;&lt;&lt;goto &quot;landing&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;
-&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="8" name="footerlost" tags="" position="100,625" size="100,100">&lt;footer&gt;&lt;div class=&quot;nav-wrapper &quot;&gt;&lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;Back&quot;&gt;&gt;&lt;&lt;goto $prevpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="9" name="footerkey" tags="" position="1100,100" size="100,100">&lt;footer&gt;&lt;div class=&quot;nav-wrapper&quot;&gt;&lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;&lt;&quot;&gt;&gt;&lt;&lt;goto $prevpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;&lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;Start again&quot;&gt;&gt;&lt;&lt;goto &quot;landing&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;nav-wrapper end&quot;&gt;&lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;Key&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;PW-32&quot;&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;/div&gt;&lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;Try another adventure&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;PW-32adventures&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="10" name="footersimple" tags="" position="100,353" size="100,100">&lt;footer&gt;&lt;div class=&quot;nav-item replay&quot;&gt;&lt;&lt;button &quot;Replay&quot;&gt;&gt;&lt;&lt;goto $passage&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;/div&gt;
+&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="8" name="footerlost" tags="" position="100,625" size="100,100">&lt;footer&gt;&lt;div class=&quot;nav-wrapper &quot;&gt;&lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;Back&quot;&gt;&gt;&lt;&lt;goto $prevpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="9" name="footerkey" tags="" position="1100,100" size="100,100">&lt;footer&gt;&lt;div class=&quot;nav-wrapper&quot;&gt;&lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;&lt;&quot;&gt;&gt;&lt;&lt;goto $prevpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;&lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;Start again&quot;&gt;&gt;&lt;&lt;goto &quot;landing&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;nav-wrapper&quot;&gt;&lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;Show map&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;end&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;nav-wrapper end&quot;&gt;&lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;Key&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;PW-32&quot;&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;/div&gt;&lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;Try another adventure&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;PW-32adventures&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="10" name="footersimple" tags="" position="100,353" size="100,100">&lt;footer&gt;&lt;div class=&quot;nav-item replay&quot;&gt;&lt;&lt;button &quot;Replay&quot;&gt;&gt;&lt;&lt;goto $passage&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;/div&gt;
 &lt;div class=&quot;nav-item end&quot;&gt;&lt;&lt;button &quot;Take me to the end&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;lost&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="11" name="PW-01" tags="" position="675,225" size="100,100">&lt;&lt;set $passage to &quot;PW-01&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;PW-02B&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;PW-01&quot; play&gt;&gt;
 &lt;main&gt;
@@ -767,13 +811,11 @@ Now - are you playing this adventure solo, or in a group?
   &lt;&lt;button &quot;Group&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;PW-02B&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;
  &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 &lt;/main&gt;
- &lt;&lt;include &quot;footer&quot;&gt;&gt;
-
-</tw-passagedata><tw-passagedata pid="12" name="PW-02A" tags="" position="800,175" size="100,100">&lt;&lt;set $passage to &quot;PW-02A&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;PW-03&quot;&gt;&gt;
+ &lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="12" name="PW-02A" tags="" position="800,175" size="100,100">&lt;&lt;set $passage to &quot;PW-02A&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;PW-03&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;PW-02A&quot; play&gt;&gt;
 &lt;main&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt; 
-This adventure is perfect for a solo adventurer
+This adventure is great for a solo adventurer!
 
 &lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;PW-03&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
  
@@ -889,12 +931,12 @@ I’ll find my friend Phillis and send her over to you as your guide, connecting
 &lt;&lt;timed 17s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;I&#39;m an island in the Caribbean
 And my name used to be Xaymaca.
 Our name was changed for the European maps. 
-Their preference - a J for an ex has stuck over the years.&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+Their preference - a J for an X has stuck over the years.&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
 &lt;&lt;timed 30s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;I&#39;m an island in the Caribbean
 And my name used to be Xaymaca.
 Our name was changed for the European maps. 
-Their preference - a J for an ex has stuck over the years.
+Their preference - a J for an X has stuck over the years.
 
 &lt;div class = &quot;menu-wrapper&quot;&gt;
   &lt;&lt;button &quot;BARBADOS&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;PW-08B&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
@@ -1046,7 +1088,7 @@ Ah, it&#39;s actually &#39;house&#39;. Let’s find out what’s next.
 
 &lt;&lt;timed 15s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;And it is to get a deeper understanding of this frankly tyrannical institution of slavery. And where better to do that than the place where all the Englishmen with power over the empire meet to socialise? &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 29s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;I also think that... and shh, I can&#39;t saw this too loudly.&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 29s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;I also think that... and shh, I can&#39;t say this too loudly.&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
 &lt;&lt;timed 35s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;I think that the more that I understand the institution, and the more people I meet and win over to my side here, the more likely I can secure my freedom back home.&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
@@ -1399,7 +1441,7 @@ That one was tough. A few different things would work, but &lt;strong class=&quo
 &lt;&lt;timed 29s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;On that point, let&#39;s make our way to the final stop, shall we?
 
 &lt;&lt;button &quot;Let&#39;s go!&quot;&gt;&gt;
-    &lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;PW-26map&quot;&gt;&gt;
+    &lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;PW-26&quot;&gt;&gt;
 &lt;&lt;/button&gt;&gt;
 
 &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
@@ -1529,10 +1571,12 @@ I’ll need to go now, but I’ll leave you with a writing tip that suits your t
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="50" name="PW-30" tags="" position="500,3375" size="100,100">&lt;&lt;set $passage to &quot;PW-30&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;PW-31&quot;&gt;&gt;&lt;&lt;set $map5 = setup.generateDirectionsMap([51.513009117655045, -0.08569552482123345], [])&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;PW-30&quot; play&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="50" name="PW-30" tags="" position="500,3375" size="100,100">&lt;&lt;set $passage to &quot;PW-30&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;PW-31&quot;&gt;&gt;&lt;&lt;set $map5 = setup.generateDirectionsMap([51.513009117655045, -0.08569552482123345], [51.512879488263096, -0.08349671512610048])&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;PW-30&quot; play&gt;&gt;
 &lt;main&gt;&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
-$map5
+
 &lt;&lt;button &quot;I&#39;m here&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;PW-31&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+
+$map5
 
 &lt;&lt;timed 0s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;Such an incredible woman, Phillis. 
 She did manage to get her book published: ‘Poems On Various Subjects’. 
@@ -1557,11 +1601,11 @@ When you find the door to the shop, you will need this &lt;&lt;button &quot;key&
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="52" name="PW-32" tags="" position="500,3625" size="100,100">&lt;&lt;set $passage to &quot;PW-32&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;PW-32adventures&quot;&gt;&gt;
-&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
-/* &lt;&lt;audio &quot;PW-32&quot; play&gt;&gt; */
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="52" name="PW-32" tags="" position="500,3625" size="100,100">&lt;&lt;set $passage to &quot;PW-32&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;PW-32adventures&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
 &lt;main&gt;
-&lt;div class=&quot;key-wrapper glowing&quot;&gt;&lt;img src=&quot;./assets/keys-34.png&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;key-wrapper glowing&quot;&gt;&lt;img src=&quot;./assets/LeadenhallMarket.png&quot;&gt;&lt;/div&gt;
+
+&lt;h2 class=&quot;endpoint&quot;&gt;LEADENHALL MARKET&lt;/h2&gt;
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerkey&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="53" name="PW-32adventures" tags="" position="625,3625" size="100,100">&lt;&lt;set $passage to &quot;PW-32adventures&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;PW-23A&quot;&gt;&gt;
